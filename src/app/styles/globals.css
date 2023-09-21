@@ -21,6 +21,12 @@ ul {
   list-style: none;
 }
 
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
 button {
   display: flex;
   align-items: center;
@@ -29,4 +35,5 @@ button {
   color: #fff;
   padding: 0 30px;
   border: 0;
+  cursor: pointer;
 }

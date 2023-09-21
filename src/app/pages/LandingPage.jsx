@@ -1,5 +1,22 @@
 /* eslint-disable react/no-unescaped-entities */
+'use client';
 import styles from '../styles/LandingPage.module.css'
+import icon1 from '../../../public/icons/icon_1.svg'
+import icon2 from '../../../public/icons/icon_2.svg'
+import icon3 from '../../../public/icons/icon_3.svg'
+import icon4 from '../../../public/icons/icon_4.svg'
+import icon5 from '../../../public/icons/icon_5.svg'
+import icon6 from '../../../public/icons/icon_6.svg'
+import icon7 from '../../../public/icons/icon_7.svg'
+import icon8 from '../../../public/icons/icon_8.svg'
+import icon9 from '../../../public/icons/icon_9.svg'
+import icon10 from '../../../public/icons/icon_10.svg'
+import icon11 from '../../../public/icons/icon_11.svg'
+import icon12 from '../../../public/icons/icon_12.svg'
+import icon13 from '../../../public/icons/icon_13.svg'
+import icon14 from '../../../public/icons/icon_14.svg'
+import icon15 from '../../../public/icons/icon_15.svg'
+import icon16 from '../../../public/icons/icon_16.svg'
 import img1 from '../../../public/assets/foto_1.jpg'
 import img2 from '../../../public/assets/foto_2.png'
 import img3 from '../../../public/assets/foto_3.jpg'
@@ -12,6 +29,29 @@ import img10 from '../../../public/assets/foto_10.png'
 import img11 from '../../../public/assets/foto_11.jpg'
 import Image from 'next/image'
 
+
+const openWhatsapp = () => {
+    window.location.href = "https://wa.me/61984977155"
+}
+
+function CreateService(img, name, url) {
+    this.img = img
+    this.name = name
+    this.url = url
+}
+
+const services = [
+    new CreateService(icon7, 'SITES COMERCIAIS', ''),
+    new CreateService(icon8, 'LANDING PAGES', ''),
+    new CreateService(icon9, 'SITES INSTITUCIONAIS', ''),
+    new CreateService(icon10, 'E-COMMERCES', ''),
+    new CreateService(icon11, 'BLOGS', ''),
+    new CreateService(icon12, 'SITES ONE PAGE', ''),
+    new CreateService(icon13, 'SITE EMPRESA', ''),
+    new CreateService(icon14, 'PORTFÓLIOS', ''),
+    new CreateService('', 'TRÁFEGO PAGO', ''),
+]
+
 export default function LandingPage() {
     return (
         <div className={styles.container}>
@@ -22,20 +62,28 @@ export default function LandingPage() {
                 <div className={styles.head}>
                     <h1>WEB TECH</h1>
                     <span className={styles.telephoneButton}>
-                        {/* <img src="" alt="" /> */}
+                        <Image src={icon1} alt='' width={0} height={0} />
                         55 61 9 9466-2277
                     </span>
 
                     <ul className={styles.linksList}>
-                        <li>SOBRE</li>
-                        <li>SERVIÇOS</li>
-                        <li>CASES</li>
-                        <li>CONTATO</li>
+                        <li>
+                            <a href="">SOBRE</a>
+                        </li>
+                        <li>
+                            <a href="">SERVIÇOS</a>
+                        </li>
+                        <li>
+                            <a href="">CASES</a>
+                        </li>
+                        <li>
+                            <a href="">CONTATO</a>
+                        </li>
                     </ul>
 
                     <span className={styles.headButtons}>
-                        <button>
-                            {/* <img src="" alt="" /> */}
+                        <button onClick={openWhatsapp}>
+                            <Image src={icon2} alt='' width={0} height={0} />
                             WHATSAPP
                         </button>
 
@@ -61,6 +109,7 @@ export default function LandingPage() {
                 </div>
                 <div className={styles.advantageContainer}>
                     <div className={styles.advantage}>
+                        <Image src={icon3} alt='' width={0} height={0} />
                         <p>Profissionalismo</p>
                         <p>
                             Combinamos conhecimento técnico com ética de trabalho
@@ -68,6 +117,7 @@ export default function LandingPage() {
                         </p>
                     </div>
                     <div className={styles.advantage}>
+                        <Image src={icon4} alt='' width={0} height={0} />
                         <p>Responsabilidade</p>
                         <p>
                             Assumimos a responsabilidade
@@ -76,6 +126,7 @@ export default function LandingPage() {
                         </p>
                     </div>
                     <div className={styles.advantage}>
+                        <Image src={icon5} alt='' width={0} height={0} />
                         <p>Criativa</p>
                         <p>
                             Somos apaixonados por
@@ -84,6 +135,7 @@ export default function LandingPage() {
                         </p>
                     </div>
                     <div className={styles.advantage}>
+                        <Image src={icon6} alt='' width={0} height={0} />
                         <p>Inovadora</p>
                         <p>
                             Aqui levamos o que fazemos a
@@ -168,45 +220,26 @@ export default function LandingPage() {
                 </div>
 
                 <div className={styles.allServices}>
-                    <div className={styles.service}>
-                        <img src="" alt="" />
-                        <p>SITES COMERCIAIS</p>
-                    </div>
-                    <div className={styles.service}>
-                        <img src="" alt="" />
-                        <p>LANDING PAGES</p>
-                    </div>
-                    <div className={styles.service}>
-                        <img src="" alt="" />
-                        <p>SITES INSTITUCIONAIS</p>
-                    </div>
-                    <div className={styles.service}>
-                        <img src="" alt="" />
-                        <p>E-COMMERCES</p>
-                    </div>
-                    <div className={styles.service}>
-                        <img src="" alt="" />
-                        <p>BLOGS</p>
-                    </div>
-                    <div className={styles.service}>
-                        <img src="" alt="" />
-                        <p>SITES ONE PAGE</p>
-                    </div>
-                    <div className={styles.service}>
-                        <img src="" alt="" />
-                        <p>SITE EMPRESA</p>
-                    </div>
-                    <div className={styles.service}>
-                        <img src="" alt="" />
-                        <p>PORTFÓLIOS</p>
-                    </div>
+                    {
+                        services.map(service => {
+                            return (
+                                <div className={styles.service} key={service?.name}>
+                                    <Image src={service?.img} alt='' width={0} height={0} />
+                                    <p>{service?.name}</p>
+                                </div>
+                            )
+                        })
+                    }
                 </div>
 
             </section>
             <span className={styles.greenLine}></span>
             <section className={styles.teste3}>
                 <div className={styles.teste3Head}>
-                    <h1>CONFIRA ALGUNS DE NOSSOS CASES</h1>
+                    <span>
+                        <h1>CONFIRA ALGUNS DE NOSSOS </h1>
+                        <h1>CASES</h1>
+                    </span>
                     <p>
                         Confira abaixo alguns de nossos projetos que foram feitos para alguns
                         clientes, clique em “descrição do site” para visualizar o propósito do projeto.
@@ -217,6 +250,7 @@ export default function LandingPage() {
                     <div className={styles.client}>
                         <Image src={img4} alt='Imagem 4' width={0} height={0} />
                         <div>
+
                             <h1>LILIUM CASE</h1>
                             <p>Empresa de Marketing</p>
                         </div>
@@ -278,7 +312,13 @@ export default function LandingPage() {
             <section className={styles.opinionContainer}>
                 <div className={styles.opinionHead}>
                     <div>
-                        <h1>OPINIÕES DE NOSSOS CLIENTES</h1>
+                        <span>
+                            <Image src={icon15} alt='' width={0} height={0} />
+
+                            <h1>OPINIÕES DE NOSSOS CLIENTES</h1>
+
+                            <Image src={icon16} alt='' width={0} height={0} />
+                        </span>
                         <p>
                             Confira o que os nossos clientes dizem sobre os
                             nossos trabalhos
