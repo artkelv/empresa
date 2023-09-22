@@ -31,7 +31,7 @@ import Image from 'next/image'
 
 
 const openWhatsapp = () => {
-    window.location.href = "https://wa.me/61984977155"
+    window.location.href = ""
 }
 
 function CreateService(img, name, url) {
@@ -68,24 +68,24 @@ export default function LandingPage() {
 
                     <ul className={styles.linksList}>
                         <li>
-                            <a href="">SOBRE</a>
+                            <a href="#sobre">SOBRE</a>
                         </li>
                         <li>
-                            <a href="">SERVIÇOS</a>
+                            <a href="#seviços">SERVIÇOS</a>
                         </li>
                         <li>
-                            <a href="">CASES</a>
+                            <a href="#cases">CASES</a>
                         </li>
                         <li>
-                            <a href="">CONTATO</a>
+                            <a href="#contatos">CONTATO</a>
                         </li>
                     </ul>
 
                     <span className={styles.headButtons}>
-                        <button onClick={openWhatsapp}>
+                        <a href='https://wa.me/61984977155' >
                             <Image src={icon2} alt='' width={0} height={0} />
                             WHATSAPP
-                        </button>
+                        </a>
 
                         <button>
                             MENSAGEM
@@ -98,9 +98,11 @@ export default function LandingPage() {
 
             <section className={styles.first}>
                 <div className={styles.mainTexts}>
-                    <h1>
-                        O NOSSO TRABALHO <br /> É DEIXAR <sds>A SUA EMPRESA ONLINE!</sds>
-                    </h1>
+                    <h1>O NOSSO TRABALHO</h1>
+                    <span>
+                        <h1>É DEIXAR</h1>
+                        <h1>A SUA EMPRESA ONLINE</h1>
+                    </span>
                     <p>Venha construir o site da sua empresa com quem entende do assunto.</p>
                 </div>
                 <div className={styles.teste}>
@@ -144,7 +146,7 @@ export default function LandingPage() {
                     </div>
                 </div>
             </section>
-            <section className={styles.teste1}>
+            <section className={styles.teste1} >
                 <div className={styles.imgContainerTe}>
                     <Image className={styles.img2} src={img2} alt='Imagem 2' width={0} height={0} />
                     <div className={styles.messageContainer}>
@@ -170,7 +172,7 @@ export default function LandingPage() {
                     <button>QUERO UM SITE!</button>
                 </div>
             </section>
-            <section className={styles.teste2}>
+            <section className={styles.teste2} id='sobre'>
                 <Image src={img3} width={0} height={0} alt='img3' />
                 <div className={styles.aboutUs}>
                     <h1>SOBRE A WEB-TECH</h1>
@@ -204,7 +206,7 @@ export default function LandingPage() {
 
             <span className={styles.greenLine}></span>
 
-            <section className={styles.servicesContainer}>
+            <section className={styles.servicesContainer} id='seviços'>
                 <div className={styles.servicesHead}>
                     <div>
                         <h1>SERVIÇOS</h1>
@@ -234,7 +236,7 @@ export default function LandingPage() {
 
             </section>
             <span className={styles.greenLine}></span>
-            <section className={styles.teste3}>
+            <section className={styles.teste3} id='cases'>
                 <div className={styles.teste3Head}>
                     <span>
                         <h1>CONFIRA ALGUNS DE NOSSOS </h1>
@@ -250,13 +252,12 @@ export default function LandingPage() {
                     <div className={styles.client}>
                         <Image src={img4} alt='Imagem 4' width={0} height={0} />
                         <div>
-
                             <h1>LILIUM CASE</h1>
                             <p>Empresa de Marketing</p>
                         </div>
 
                         <div className={styles.clientBtnContainer}>
-                            <button>VISUALIZAR CASE</button>
+                            <a href="">VISUALIZAR CASE</a>
                             <button>DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
@@ -268,7 +269,7 @@ export default function LandingPage() {
                         </div>
 
                         <div className={styles.clientBtnContainer}>
-                            <button>VISUALIZAR CASE</button>
+                            <a href="">VISUALIZAR CASE</a>
                             <button>DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
@@ -280,7 +281,7 @@ export default function LandingPage() {
                         </div>
 
                         <div className={styles.clientBtnContainer}>
-                            <button>VISUALIZAR CASE</button>
+                            <a href="">VISUALIZAR CASE</a>
                             <button>DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
@@ -292,7 +293,7 @@ export default function LandingPage() {
                         </div>
 
                         <div className={styles.clientBtnContainer}>
-                            <button>VISUALIZAR CASE</button>
+                            <a href="">VISUALIZAR CASE</a>
                             <button>DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
@@ -393,7 +394,7 @@ export default function LandingPage() {
                     </div>
                 </div>
             </section>
-            <section className={styles.teste5}>
+            <section className={styles.teste5} id='contatos'>
                 <div>
                     <h1>CONTATE-NOS</h1>
                     <span>
@@ -403,7 +404,7 @@ export default function LandingPage() {
                             aplicação de sucesso.
                         </p>
                     </span>
-                    <form className={styles.form}>
+                    <form method='post' action='mailto:viniolicar2004@gmail.com' className={styles.form}>
                         <input type="text" placeholder="Nome" />
                         <input type="text" placeholder="Celular" />
                         <input type="text" placeholder="Email" />
