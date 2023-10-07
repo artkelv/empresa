@@ -8,7 +8,9 @@
 .img1Container {
     position: absolute;
     width: 100%;
-    max-height: 50vh;
+    height: 9.7%;
+    background-image: linear-gradient(#001c31b1, #001c31b1), url('../../../public/assets/foto_1.jpg');
+    background-size: cover;
 }
 
 .img1 {
@@ -17,75 +19,71 @@
     opacity: 0.3;
 }
 
-.headContainer,
-.first {
+.headerContainer,
+.firstSection {
     position: relative;
     color: #fff;
 }
 
-.headContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.head {
+.headerContainer {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 3rem 0.5rem;
+    margin-inline: auto;
     width: 90%;
 }
 
-.head h1 {
+.logo {
     font-family: Italiana;
     font-size: 30px;
     font-weight: 400;
 }
 
-.telephoneButton {
+.phoneContainer {
     display: flex;
     align-items: center;
 }
 
-.telephoneButton img {
+.phoneContainer img {
     margin-right: 20px;
 }
 
-.linksList {
+.menuContainer {
     display: flex;
 }
 
-.linksList li {
+.menuContainer li {
     margin: 0 10px;
 }
 
-.headButtons {
+.headerButtons {
     display: flex;
     align-items: center;
     font-size: 11px;
 }
 
-.headButtons a, 
-.headButtons button {
+.headerButtons a,
+.headerButtons button {
     border-radius: 20px;
     font-size: 11px;
-    padding: 10px 30px;
+    padding: 0px 30px;
     font-weight: 700;
+    height: 40px;
 }
 
-.headButtons a:first-child {
+.headerButtons a:first-child {
     display: flex;
     align-items: center;
     color: #23c963;
     border: 1px solid #23c963;
 }
 
-.headButtons a>img {
+.headerButtons a>img {
     margin-right: 10px;
 }
 
-.headButtons button:last-child {
+.headerButtons button:last-child {
     margin-left: 20px;
     border: 1px solid #fff;
 }
@@ -99,10 +97,12 @@
     margin-bottom: 8rem;
 }
 
-.first {
+.firstSection {
     display: flex;
     flex-direction: column;
-    padding: 0rem 8rem;
+    margin-inline: auto;
+    border-bottom: 1px solid #ffffff6e;
+    width: 80%;
 }
 
 .mainTexts span {
@@ -128,48 +128,46 @@
     font-size: 15px;
 }
 
-.teste {
+.firstSectionButtons {
     display: flex;
     align-items: center;
     margin: 7rem 0 10rem;
 }
 
-.teste button {
+.firstSectionButtons button {
     padding: 1% 3rem;
     border-radius: 20px;
     font-family: Antonio;
 }
 
-.teste button:first-child {
+.firstSectionButtons button:first-child {
     background-color: #25d366;
-    border: none;
     margin-right: 20px;
 }
 
-.teste button:last-child {
+.firstSectionButtons button:last-child {
     border: 1px solid #fff;
 }
 
 .advantageContainer {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 1rem;
     padding-bottom: 4rem;
-    border-bottom: 1px solid #ffffff6e;
 }
 
 .advantageContainer .advantage:first-child {
-    background-color: #25d3657a;
-    border: 0;
+    background-color: #25d36680;
+    border: none;
 }
 
 .advantage {
-    border: 1px solid;
+    border: 1px solid #9F9F9F;
     padding: 1.5rem 2rem;
-    width: 23%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    background-color: #001C31;
 }
 
 .advantage img {
@@ -187,14 +185,12 @@
     font-weight: 300;
 }
 
-.teste1 {
+.secondSection {
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
-    padding: 1rem 10rem 3rem 2rem;
-    margin-block: 4rem 6rem;
-    min-height: 481px;
-    height: 55vh;
+    padding: 5rem 10rem 0rem 2rem;
+    margin-bottom: 9rem;
 }
 
 .imgContainerTe {
@@ -204,18 +200,19 @@
 }
 
 .imgContainerTe>.img2 {
-    position: absolute;
     object-fit: cover;
     width: 100%;
-    height: 100%;
+    height: auto;
     opacity: 0.3;
 }
 
 .messageContainer {
     border: 3px solid #fff;
-    margin: 2rem;
-    position: relative;
-    height: 87%;
+    position: absolute;
+    top: 7%;
+    left: 5%;
+    height: 86%;
+    width: 90%;
     padding: 3rem 2rem;
 }
 
@@ -272,26 +269,26 @@
 
 .whatWeDoContainer>button {
     background-color: #25d366;
-    border: none;
     padding: 1rem 2.2rem;
     border-radius: 5px;
     margin-top: 4rem;
     font-size: 15px;
 }
 
-.teste2 {
+.thirdSection {
     position: relative;
     margin-bottom: 4rem;
     background-color: #002642;
 }
 
-.teste2 img {
-    width: 49.2%;
-    min-height: 700px;
-    height: 80vh;
+.thirdSection .img3 {
+    width: 50%;
+    height: 80.5vh;
+    background-image: url('../../../public/assets/image_2.png');
+    background-size: cover;
 }
 
-.aboutUs {
+.aboutUsContainer {
     position: absolute;
     top: 8%;
     left: 43%;
@@ -301,13 +298,13 @@
     padding: 2rem;
 }
 
-.aboutUs h1 {
+.aboutUsContainer h1 {
     color: #25d366;
     font-size: 30px;
     margin-bottom: 2rem;
 }
 
-.aboutUs h2 {
+.aboutUsContainer h2 {
     color: #3896ee;
     margin-bottom: 4rem;
     border-left: 3px solid;
@@ -315,7 +312,7 @@
     font-size: 20px;
 }
 
-.aboutUs p {
+.aboutUsContainer p {
     margin-bottom: 2rem;
     color: #E2E2E2;
     font-weight: 300;
@@ -330,12 +327,12 @@
     margin: auto;
 }
 
-.servicesContainer {
-    margin: 7rem 0;
-    padding: 0 10rem;
+.fourthSection {
+    margin: 7rem auto;
+    width: 75%;
 }
 
-.servicesHead {
+.servicesHeader {
     width: 100%;
     margin-bottom: 5rem;
     display: flex;
@@ -343,11 +340,11 @@
     align-items: center;
 }
 
-.servicesHead div {
+.servicesHeader div {
     width: 50%;
 }
 
-.servicesHead h1 {
+.servicesHeader h1 {
     font-size: 40px;
     border-left: 3px solid #25D366;
     margin-bottom: 2rem;
@@ -355,16 +352,16 @@
     color: #25d366;
 }
 
-.servicesHead span {
+.servicesHeader span {
     font-size: 11px;
     font-weight: 700;
     background-color: #25d366;
     padding: 1.3rem 2rem;
 }
 
-.allServices {
+.servicesContainer {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px 50px;
 }
 
@@ -389,47 +386,45 @@
     font-weight: 700;
 }
 
-.teste3 {
-    margin-bottom: 5rem;
+.fifthSection {
+    margin: 7rem 0 10rem;
 }
 
-.teste3Head {
+.fifthSectionHeader {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 5rem 0;
+    margin-bottom: 5rem;
 }
 
-.teste3Head span {
+.fifthSectionHeader span {
     display: flex;
 }
 
-.teste3Head span :last-child {
+.fifthSectionHeader span :last-child {
     margin-left: 10px;
     color: #25d366;
 }
 
-.teste3Head h1 {
+.fifthSectionHeader h1 {
     font-size: 35px;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
-.teste3Head p {
+.fifthSectionHeader p {
     text-align: center;
     width: 52%;
     color: #CACACA;
 }
 
-.clients {
-    display: flex;
-    align-items: start;
-    min-height: 722px;
-    height: 70vh;
+.casesContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.client {
-    width: 25%;
-    height: 100%;
+.case {
+    height: 722px;
+    /* height: 82vh; */
     padding-bottom: 2rem;
     display: flex;
     flex-direction: column;
@@ -439,45 +434,45 @@
     position: relative;
 }
 
-.client img {
+.case img {
     opacity: 0.5;
     position: absolute;
     width: 100%;
 }
 
-.client div {
+.case div {
     margin: 2rem 0 0 2rem;
     position: relative;
 }
 
-.client h1 {
+.case h1 {
     font-size: 30px;
 }
 
-.client p {
+.case p {
     color: #25d366;
     font-weight: 700;
     font-size: 12px;
 }
 
-.client:first-child>h1,
-.client:first-child>p {
+.case:first-child>h1,
+.case:first-child>p {
     text-align: start;
     margin: 0;
 }
 
-.client:first-child>p {
+.case:first-child>p {
     color: #25d366;
 }
 
-.clientBtnContainer {
+.caseBtnContainer {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-.clientBtnContainer a,
-.clientBtnContainer button {
+.caseBtnContainer a,
+.caseBtnContainer button {
     width: 75%;
     padding: 1rem 0;
     border-radius: 14px;
@@ -486,18 +481,17 @@
 }
 
 
-.clientBtnContainer :first-child {
+.caseBtnContainer :first-child {
     background-color: #25d366;
-    border: 0;
     text-align: center;
     font-size: 12px;
 }
 
-.clientBtnContainer :last-child {
+.caseBtnContainer :last-child {
     border: 2px solid #50d28a;
 }
 
-.teste4 {
+.sixthSection {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -505,10 +499,11 @@
     margin-bottom: 10rem;
     background-image: url(../../../public/assets/foto_8.png);
     background-size: cover;
-    height: 60vh;
+    padding: 2rem;
+    min-height: 60vh;
 }
 
-.teste4 h1 {
+.sixthSection h1 {
     color: #25d366;
     text-align: center;
     width: 49%;
@@ -516,7 +511,7 @@
     margin-bottom: 2rem;
 }
 
-.teste4 p {
+.sixthSection p {
     width: 39%;
     text-align: center;
     color: #CACACA;
@@ -524,8 +519,7 @@
     font-weight: 700;
 }
 
-.teste4 button {
-    border: 0;
+.sixthSection button {
     border-radius: 5px;
     background-color: #25d366;
     padding: 1.5rem 1rem;
@@ -534,13 +528,8 @@
     font-weight: 700;
 }
 
-.opinionContainer>.greenLine {
-    margin: 5rem auto;
-    height: 3px;
-    width: 50%;
-}
 
-.opinionHead {
+.opinionHeader {
     background-color: #25d366;
     display: flex;
     flex-direction: column;
@@ -549,7 +538,7 @@
     margin-bottom: 5rem;
 }
 
-.opinionHead div {
+.opinionHeader div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -557,19 +546,19 @@
     border-block: 3px solid;
 }
 
-.opinionHead span {
+.opinionHeader span {
     display: flex;
     align-items: start;
     height: 5rem;
     margin-bottom: 1rem;
 }
 
-.opinionHead h1 {
+.opinionHeader h1 {
     font-size: 35px;
     margin: 2rem 20px 0rem 20px;
 }
 
-.opinionHead p {
+.opinionHeader p {
     text-align: center;
     width: 74%;
     font-size: 20px;
@@ -580,23 +569,22 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     position: relative;
-    height: 85vh;
-    min-height: 743px;
 }
 
 .opinion img {
     width: 100%;
-    height: 100%;
-    position: absolute;
+    height: auto;
     opacity: 0.5;
 }
 
 .opinion>div {
-    position: relative;
+    position: absolute;
     border: 3px solid #fff;
-    margin: 5rem 10rem;
-    height: 80%;
+    margin: 5rem 0;
+    height: 75%;
+    width: 80%;
     padding: 7rem 4rem 6rem;
 }
 
@@ -610,6 +598,12 @@
     position: absolute;
     width: 32%;
     font-size: 20px;
+}
+
+.opinionsContainer>.greenLine {
+    margin: 7rem auto;
+    height: 3px;
+    width: 50%;
 }
 
 .opinionContainer>.opinion:first-child div>p {
@@ -639,22 +633,27 @@
     color: #25d366;
 }
 
-.teste5 {
-    margin-top: 10rem;
+.contactUsContainer {
+    margin-top: 5rem;
+    height: auto;
     display: flex;
     justify-content: space-between;
     border-top: 25px solid #25d366;
     position: relative;
 }
 
-.teste5>div>h1 {
+.contactUsContainer>div:first-child {
+    padding-bottom: 2rem;
+}
+
+.contactUsContainer>div>h1 {
     border-left: 3px solid #fff;
     padding-left: 1rem;
     font-size: 40px;
-    margin: 5rem 0 3rem 5rem;
+    margin: 5rem 0 2rem 5rem;
 }
 
-.teste5 span {
+.formTextContainer {
     display: flex;
     border: 3px solid #25d366;
     width: 90%;
@@ -665,7 +664,7 @@
     font-size: 18px;
 }
 
-.teste5 span>p {
+.formTextContainer>p {
     padding: 2rem 4rem 2rem 0;
     border-right: 20px solid #25d366;
 }
@@ -674,8 +673,9 @@
     display: flex;
     flex-direction: column;
     align-items: start;
-    margin-top: 2rem;
+    margin: 2rem 0;
     padding: 0 5rem;
+    position: relative;
 }
 
 .form input {
@@ -704,8 +704,30 @@
     background-color: #25d366;
     width: 40%;
     padding: 1.5rem;
-    margin-bottom: 2rem;
     font-size: 15px;
+}
+
+.lines {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.lines>span {
+    height: 3px;
+    background-color: #fff;
+    margin-top: 1rem;
+}
+
+.lines>span:first-child {
+    width: 114px;
+}
+
+.lines>span:last-child {
+    width: 146px;
 }
 
 .form>input::placeholder,
@@ -713,7 +735,7 @@
     color: #fff;
 }
 
-.teste5>div>p:last-child {
+.contactUsContainer>div>p:last-child {
     font-size: 12px;
     padding-left: 5rem;
 }
@@ -724,24 +746,22 @@
     font-weight: 700;
 }
 
-.last {
+.lastContainer {
     background-image: url(../../../public/assets/foto_12.png);
-    height: 107vh;
     box-sizing: border-box;
     color: #fff;
     padding: 6rem 5rem 0;
     width: 75%;
 }
 
-.last div {
+.lastContainer div {
     position: relative;
     height: 92%;
     padding: 7rem 5rem 0;
     border: 3px solid #fff;
 }
 
-.last h1 {
-    border: 0;
+.lastContainer h1 {
     border-bottom: 3px solid #fff;
     margin-bottom: 2rem;
     padding-bottom: 1.5rem;
@@ -749,24 +769,77 @@
     font-size: 40px;
 }
 
-.last h2 {
+.lastContainer h2 {
     width: 90%;
     font-size: 28px;
 }
 
-.last h2,
-.last p {
+.lastContainer>div>h2,
+.lastContainer>div>p {
     margin-bottom: 5rem;
 }
 
-.last p {
+.lastContainer p {
     font-weight: 400;
     font-size: 16px;
 }
 
-.last>div :last-child {
+.lastContainer>div :last-child {
     position: absolute;
-    bottom: 1rem;
+    bottom: 0.5%;
     right: 3rem;
     font-weight: 700;
+}
+
+@media (max-width: 768px) {
+
+    .secondSection {
+        flex-direction: column;
+        align-items: center;
+        padding-inline: 0;
+    }
+
+    .imgContainerTe {
+        width: 70%;
+    }
+
+    .whatWeDoContainer {
+        width: 50%;
+    }
+
+    .verticalBorder {
+        height: 3px;
+        width: 50%;
+        margin: 3rem auto;
+    }
+
+    .contactUsContainer {
+        flex-direction: column-reverse;
+    }
+
+    .lastContainer {
+        /* Adicionar quando estiver 1000px para baixo  */
+        width: 100%;
+        height: 120vh;
+    }
+}
+
+@media (max-width: 550px) {
+    .imgContainerTe {
+        width: 90%;
+    }
+
+    .whatWeDoContainer {
+        width: 70%;
+    }
+}
+
+@media (max-width: 400px) {
+    .imgContainerTe {
+        width: 100%;
+    }
+
+    .whatWeDoContainer {
+        width: 80%;
+    }
 }
