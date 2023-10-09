@@ -67,9 +67,9 @@
 .headerButtons button {
     border-radius: 20px;
     font-size: 11px;
-    padding: 0px 30px;
+    padding: 0px 25px;
     font-weight: 700;
-    height: 40px;
+    height: 37px;
 }
 
 .headerButtons a:first-child {
@@ -85,11 +85,25 @@
 
 .headerButtons button:last-child {
     margin-left: 20px;
+    padding: 0 40px;
     border: 1px solid #fff;
+}
+
+.menu {
+    display: none;
+}
+
+.menu span {
+    display: block;
+    width: 33px;
+    height: 2px;
+    background-color: #fff;
+    margin-top: 8px;
 }
 
 .headerBorder {
     display: block;
+    position: relative;
     background-color: #ffffff6e;
     width: 78%;
     height: 1px;
@@ -105,9 +119,8 @@
     width: 80%;
 }
 
-.mainTexts span {
-    display: flex;
-    margin-bottom: 2rem;
+.mainTexts span>h1 {
+    display: inline;
 }
 
 .mainTexts h1 {
@@ -119,11 +132,12 @@
 }
 
 .mainTexts h1:last-child {
+    display: inline;
     color: #25D366;
-    margin-left: 20px;
 }
 
 .mainTexts p {
+    margin-top: 2rem;
     font-weight: 300;
     font-size: 15px;
 }
@@ -135,7 +149,7 @@
 }
 
 .firstSectionButtons button {
-    padding: 1% 3rem;
+    padding: 0.8rem 3.2rem;
     border-radius: 20px;
     font-family: Antonio;
 }
@@ -398,17 +412,18 @@
 }
 
 .fifthSectionHeader span {
-    display: flex;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .fifthSectionHeader span :last-child {
-    margin-left: 10px;
     color: #25d366;
 }
 
 .fifthSectionHeader h1 {
     font-size: 35px;
     margin-bottom: 2rem;
+    display: inline;
 }
 
 .fifthSectionHeader p {
@@ -548,12 +563,12 @@
 
 .opinionHeader span {
     display: flex;
-    align-items: start;
-    height: 5rem;
+    align-items: flex-start;
     margin-bottom: 1rem;
 }
 
 .opinionHeader h1 {
+    text-align: center;
     font-size: 35px;
     margin: 2rem 20px 0rem 20px;
 }
@@ -563,6 +578,7 @@
     width: 74%;
     font-size: 20px;
     color: #ffffffab;
+    margin-top: 1rem;
 }
 
 .opinion {
@@ -582,44 +598,41 @@
 .opinion>div {
     position: absolute;
     border: 3px solid #fff;
+    display: flex;
+    align-items: flex-end;
     margin: 5rem 0;
     height: 75%;
     width: 80%;
-    padding: 7rem 4rem 6rem;
+    padding: 5%;
 }
 
 .opinion span {
-    position: absolute;
-    bottom: 4rem;
-    right: 4rem;
-}
-
-.opinion div>p {
-    position: absolute;
-    width: 32%;
-    font-size: 20px;
-}
-
-.opinionsContainer>.greenLine {
-    margin: 7rem auto;
-    height: 3px;
     width: 50%;
+    height: 100%;
 }
 
-.opinionContainer>.opinion:first-child div>p {
-    right: 4rem;
+.opinion span:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: end;
+    height: 100%;
 }
 
-.opinionContainer .opinion:nth-child(2)>div>p {
-    left: 4rem;
+.opinion div span>p {
+    width: 90%;
+    height: 90%;
+    font-size: 20px;
+    text-align: justify;
 }
 
-.opinion div>h3 {
-    position: absolute;
-    bottom: 4rem;
-    left: 4rem;
-    color: #25d366;
+#teste div {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+}
 
+#teste span:last-child {
+    align-items: start;
 }
 
 .opinion span h1 {
@@ -631,6 +644,12 @@
     font-size: 22px;
     margin: 0;
     color: #25d366;
+}
+
+.opinionsContainer>.greenLine {
+    margin: 7rem auto;
+    height: 3px;
+    width: 50%;
 }
 
 .contactUsContainer {
@@ -735,9 +754,13 @@
     color: #fff;
 }
 
-.contactUsContainer>div>p:last-child {
+.contactUsContainer>div>span:last-child {
     font-size: 12px;
     padding-left: 5rem;
+}
+
+.contactUsContainer>div>span:last-child p {
+    display: inline;
 }
 
 .mark {
@@ -791,6 +814,24 @@
     font-weight: 700;
 }
 
+@media (max-width: 1100px) {
+    .phoneContainer {
+        display: none;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .headerButtons,
+    .phoneContainer {
+        display: none;
+    }
+
+    .menu {
+        display: block;
+    }
+}
+
 @media (max-width: 768px) {
 
     .secondSection {
@@ -813,18 +854,75 @@
         margin: 3rem auto;
     }
 
+    .thirdSection .img3 {
+        width: 100%;
+    }
+
+    .aboutUsContainer {
+        background-color: transparent;
+        top: 0;
+        left: 0;
+        border-radius: 0;
+        width: 100%;
+    }
+    .aboutUsContainer p {
+        color: #fff;
+    }
+
+    .sixthSection h1 {
+        width: 70%;
+    }
+
+    .sixthSection p {
+        width: 60%;
+    }
+
+    .sixthSection button {
+        width: 30%;
+    }
+
+    .opinion>div {
+        padding: 2.5rem;
+    }
+
+    .opinion div>p {
+        width: 50%;
+    }
+
+    .opinion span h1 {
+        font-size: 30px;
+    }
+
     .contactUsContainer {
         flex-direction: column-reverse;
     }
 
     .lastContainer {
-        /* Adicionar quando estiver 1000px para baixo  */
         width: 100%;
         height: 120vh;
     }
 }
 
 @media (max-width: 550px) {
+
+    .menuContainer,
+    .headerButtons,
+    .phoneContainer {
+        display: none;
+    }
+
+    .headerContainer {
+        width: 77%;
+    }
+
+    .headerBorder {
+        width: 65%;
+    }
+
+    .firstSectionButtons button {
+        padding-block: 1rem;
+    }
+
     .imgContainerTe {
         width: 90%;
     }
@@ -832,9 +930,80 @@
     .whatWeDoContainer {
         width: 70%;
     }
+
+    .servicesHeader {
+        flex-direction: column;
+    }
+
+    .servicesHeader div {
+        width: 90%;
+        margin-bottom: 3rem;
+    }
+
+    .aboutUsContainer {
+        padding: 20px;
+    }
+
+    .aboutUsContainer p {
+        width: 100%;
+    }
+
+    .sixthSection h1 {
+        width: 100%;
+    }
+
+    .sixthSection p {
+        width: 70%;
+    }
+
+    .sixthSection button {
+        width: 50%;
+    }
+
+    .contactUsContainer>div>h1 {
+        margin-left: 3rem;
+    }
+
+    .formTextContainer,
+    .form,
+    .contactUsContainer>div>span:last-child {
+        padding-left: 3rem;
+    }
+
+    .formTextContainer>p {
+        padding-right: 1rem;
+    }
+
+    .lastContainer {
+        width: 100%;
+        height: 120vh;
+        padding-inline: 2rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .firstSectionButtons button {
+        width: 100%;
+        margin: 1rem 0;
+        padding: 1rem 0;
+    }
 }
 
 @media (max-width: 400px) {
+    .firstSectionButtons {
+        flex-direction: column;
+    }
+
+    .firstSectionButtons button:first-child {
+        margin-right: 0;
+    }
+
+    .firstSectionButtons button {
+        width: 100%;
+        margin: 1rem 0;
+        padding: 1rem 0;
+    }
+
     .imgContainerTe {
         width: 100%;
     }
@@ -842,4 +1011,33 @@
     .whatWeDoContainer {
         width: 80%;
     }
+
+    .thirdSection .img3 {
+        height: 100vh;
+    }
+
+    .sixthSection button {
+        width: 70%;
+    }
+
+    .contactUsContainer>div>h1 {
+        margin-left: 1rem;
+    }
+
+    .formTextContainer,
+    .form,
+    .contactUsContainer>div>span:last-child {
+        padding-left: 1rem;
+    }
+
+    .form input,
+    .form textarea {
+        width: 100%;
+    }
+
+    .lastContainer div {
+        border: none;
+        padding-inline: 0rem;
+    }
+
 }

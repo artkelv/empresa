@@ -1,9 +1,9 @@
-import { NextResponse } from "next/server"
+import { NextResponse } from 'next/server';
 import * as nodemailer from 'nodemailer'
 
 // const req = NextRequest
-export const POST = async (req, res) => {
-    // const res = NextResponse
+export const POST = async (req) => {
+    const res = NextResponse
 
     const { email, name, phone, message } = await req.json()
 
@@ -26,6 +26,7 @@ export const POST = async (req, res) => {
 
     const messages = {
         from: 'viniolicar2004@gmail.com',
+        to: 'viniolicar2004@gmail.com',
         subject: "Teste", // Subject line
         html: html
         // text: body.name, // plain text body
@@ -36,13 +37,8 @@ export const POST = async (req, res) => {
     transporter.sendMail(messages, (error, info) => {
         if (error) {
             messageReturning = 'Email não enviado'
-            return res.send(error)
-        } else {
-            messageReturning = 'Email enviado com sucesso'
-            // return res.json({ message: 'Email enviado com sucesso' })
         }
     })
 
-    return res.json({ message: messageReturning })
-    // return res.json({ message: 'Email não foi enviado com sucesso' })
+    return res.json({ message: 'Email não foi enviado com sucesso' })
 }

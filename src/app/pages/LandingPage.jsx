@@ -17,9 +17,7 @@ import icon13 from '../../../public/icons/icon_13.svg'
 import icon14 from '../../../public/icons/icon_14.svg'
 import icon15 from '../../../public/icons/icon_15.svg'
 import icon16 from '../../../public/icons/icon_16.svg'
-import img1 from '../../../public/assets/foto_1.jpg'
 import img2 from '../../../public/assets/foto_2.png'
-import img3 from '../../../public/assets/image_2.png'
 import img4 from '../../../public/assets/foto_4.png'
 import img5 from '../../../public/assets/foto_5.png'
 import img6 from '../../../public/assets/foto_6.png'
@@ -35,7 +33,15 @@ import { useState } from 'react';
 
 export default function LandingPage() {
 
-    const [form, setForm] = useState({})
+    console.log()
+    console.log(process.env.URL)
+
+    const [form, setForm] = useState({
+        name: '',
+        phone: '',
+        email: '',
+        message: ''
+    })
 
     function CreateService(img, name, url) {
         this.img = img
@@ -56,7 +62,7 @@ export default function LandingPage() {
     ]
 
     const sendEmail = async () => {
-        await axios.post('http://localhost:3000/api/email', form)
+        await axios.post(`${window.location.origin}/api/email`, form)
             .catch(e => console.log(e))
 
         setForm({ name: '', phone: '', email: '', message: '' })
@@ -64,9 +70,6 @@ export default function LandingPage() {
 
     return (
         <div className={styles.container}>
-            {/* <div className={styles.img1Container}>
-                <Image className={styles.img1} src={img1} alt='Imagem 1' width={0} height={0} />
-            </div> */}
             <div className={styles.img1Container}></div>
             <div className={styles.headerContainer}>
                 <a className={styles.logo} href="">WEB TECH</a>
@@ -100,6 +103,11 @@ export default function LandingPage() {
                         MENSAGEM
                     </button>
                 </span>
+                <div className={styles.menu}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
 
             <span className={styles.headerBorder}></span>
@@ -108,7 +116,7 @@ export default function LandingPage() {
                 <div className={styles.mainTexts}>
                     <h1>O NOSSO TRABALHO</h1>
                     <span>
-                        <h1>É DEIXAR</h1>
+                        <h1>É DEIXAR </h1>
                         <h1>A SUA EMPRESA ONLINE</h1>
                     </span>
                     <p>Venha construir o site da sua empresa com quem entende do assunto.</p>
@@ -190,7 +198,6 @@ export default function LandingPage() {
                 </div>
             </div>
             <div className={styles.thirdSection} id='sobre'>
-                {/* <Image src={img3} width={0} height={0} alt='img3' /> */}
                 <div className={styles.img3}></div>
 
                 <div className={styles.aboutUsContainer}>
@@ -200,6 +207,7 @@ export default function LandingPage() {
                         QUE A WEB-TECH FOI CRIADA.
                     </h2>
                     <p>
+                        {/* Tentar adapatar colocando um do lado outro com display flex */}
                         A WEB-TECH, nasce de três mentes apaixonadas por tecnologia,
                         Francine, Arthur e Gessiel. Nos unimos para transformar ideias em
                         realidade digital desde 2023. Com foco na criação de sites
@@ -360,17 +368,19 @@ export default function LandingPage() {
                     <Image src={img9} alt='Imagem 9' width={0} height={0} />
 
                     <div>
-                        <p>
-                            Gostaria de dizer que a web tech foi
-                            excelente no que fez, gostei muito estão de
-                            parabéns. Desde o inicio eles se
-                            dispuseram a nos ajuda e foram muito
-                            solistas, o design da minha marca ficou
-                            otimo, o site ficou perfeito eu adorei, ficou
-                            lindo.
-                        </p>
+                        <span>
+                            <p>
+                                Gostaria de dizer que a web tech foi
+                                excelente no que fez, gostei muito estão de
+                                parabéns. Desde o inicio eles se
+                                dispuseram a nos ajuda e foram muito
+                                solistas, o design da minha marca ficou
+                                otimo, o site ficou perfeito eu adorei, ficou
+                                lindo.
+                            </p>
 
-                        <h3>Aguiar Confecções</h3>
+                            <h3>Aguiar Confecções</h3>
+                        </span>
 
                         <span>
                             <h1>LUANA AGUIAR</h1>
@@ -381,21 +391,23 @@ export default function LandingPage() {
 
                 <span className={styles.greenLine}></span>
 
-                <div className={styles.opinion}>
+                <div className={styles.opinion} id={styles.teste}>
                     <Image src={img10} alt='Imagem 10' width={0} height={0} />
 
                     <div>
-                        <p>
-                            Gostaria de dizer que a web tech foi
-                            excelente no que fez, gostei muito estão de
-                            parabéns. Desde o inicio eles se
-                            dispuseram a nos ajuda e foram muito
-                            solistas, o design da minha marca ficou
-                            otimo, o site ficou perfeito eu adorei, ficou
-                            lindo.
-                        </p>
+                        <span>
+                            <p>
+                                Gostaria de dizer que a web tech foi
+                                excelente no que fez, gostei muito estão de
+                                parabéns. Desde o inicio eles se
+                                dispuseram a nos ajuda e foram muito
+                                solistas, o design da minha marca ficou
+                                otimo, o site ficou perfeito eu adorei, ficou
+                                lindo.
+                            </p>
 
-                        <h3>Lain Soluções LTDA</h3>
+                            <h3>Lain Soluções LTDA</h3>
+                        </span>
 
                         <span>
                             <h1>MATHIAS FILLETE</h1>
@@ -410,17 +422,19 @@ export default function LandingPage() {
                     <Image src={img11} alt='Imagem 11' width={0} height={0} />
 
                     <div>
-                        <p>
-                            Gostaria de dizer que a web tech foi
-                            excelente no que fez, gostei muito estão de
-                            parabéns. Desde o inicio eles se
-                            dispuseram a nos ajuda e foram muito
-                            solistas, o design da minha marca ficou
-                            otimo, o site ficou perfeito eu adorei, ficou
-                            lindo.
-                        </p>
+                        <span>
+                            <p>
+                                Gostaria de dizer que a web tech foi
+                                excelente no que fez, gostei muito estão de
+                                parabéns. Desde o inicio eles se
+                                dispuseram a nos ajuda e foram muito
+                                solistas, o design da minha marca ficou
+                                otimo, o site ficou perfeito eu adorei, ficou
+                                lindo.
+                            </p>
 
-                        <h3>Aguiar Confecções</h3>
+                            <h3>Aguiar Confecções</h3>
+                        </span>
 
                         <span>
                             <h1>FERNANDA LEAL</h1>
@@ -448,28 +462,33 @@ export default function LandingPage() {
 
                         <input type="text"
                             placeholder="Celular"
-                            onChange={e => setForm({ ...form, phone: e.target.value })} value={form.phone} />
+                            onChange={e => setForm({ ...form, phone: e.target.value })}
+                            value={form.phone} />
 
                         <input type="text"
                             placeholder="Email"
-                            onChange={e => setForm({ ...form, email: e.target.value })} value={form.email} />
+                            onChange={e => setForm({ ...form, email: e.target.value })}
+                            value={form.email} />
 
                         <textarea placeholder="Mensagem"
                             name=""
                             cols="30" rows="3"
-                            onChange={e => setForm({ ...form, message: e.target.value })} value={form.message}>
+                            onChange={e => setForm({ ...form, message: e.target.value })}
+                            value={form.message}>
                         </textarea>
 
                         <button type='button' onClick={sendEmail}>ENVIAR</button>
+
                         <span className={styles.lines}>
                             <span></span>
                             <span></span>
                         </span>
                     </form>
 
-                    <p>
-                        AGUARDAMOS O SEU CONTATO! COM CARINHO <mark className={styles.mark}>WEB-TECH</mark>.
-                    </p>
+                    <span>
+                        <p>AGUARDAMOS O SEU CONTATO! COM CARINHO </p>
+                        <p className={styles.mark}>WEB-TECH.</p>
+                    </span>
                 </div>
                 <div className={styles.lastContainer}>
                     <div>
