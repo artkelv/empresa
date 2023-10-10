@@ -29,7 +29,6 @@ export const POST = async (req) => {
         to: 'viniolicar2004@gmail.com',
         subject: "Teste", // Subject line
         html: html
-        // text: body.name, // plain text body
     };
 
     let messageReturning
