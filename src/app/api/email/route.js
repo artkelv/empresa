@@ -31,14 +31,20 @@ export const POST = async (req) => {
             html: html
         };
 
-        transporter.sendMail(messages, (error, info) => {
-            if (error) {
-                throw new Error('Email não enviado')
-            }
+        // webtechdev3@gmail.com
+
+        await new Promise((resolve, reject) => {
+            transporter.sendMail(messages, (error, info) => {
+                if (error) {
+                    reject(error)
+                } else {
+                    resolve()
+                }
+            })
         })
 
         return res.json({ message: 'Email foi enviado com sucesso' })
     } catch (error) {
-        return res.json({ message: error.message })
+        return res.json({ message: 'Email não enviado' })
     }
 }
