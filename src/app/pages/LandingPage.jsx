@@ -59,7 +59,7 @@ export default function LandingPage() {
     ]
 
     const sendEmail = async () => {
-        await axios.post(`/api/email`, form)
+        await axios.post(`${process.env.URL}/api/email`, form)
             .catch(e => console.log(e))
 
         setForm({ name: '', phone: '', email: '', message: '' })
