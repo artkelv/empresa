@@ -4,7 +4,7 @@ import LandingPage from './pages/LandingPage'
 export default function Home() {
   return (
     <main className={styles.main}>
-      <LandingPage />
+      <LandingPage url={process.env}/>
     </main>
   )
 }
