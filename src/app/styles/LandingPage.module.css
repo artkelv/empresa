@@ -279,6 +279,7 @@
 .whatWeDoContainer p {
     margin-bottom: 2rem;
     font-weight: 400;
+    text-align: justify;
 }
 
 .whatWeDoContainer>button {
@@ -296,8 +297,9 @@
 }
 
 .thirdSection .img3 {
+    flex: 1;
     width: 50%;
-    height: 80.5vh;
+    height: 90vh;
     background-image: url('../../../public/assets/image_2.png');
     background-size: cover;
 }
@@ -306,7 +308,7 @@
     position: absolute;
     top: 8%;
     left: 43%;
-    width: 45%;
+    width: 50%;
     background-color: #001c31;
     border-radius: 10px;
     padding: 2rem;
@@ -620,7 +622,7 @@
 }
 
 .opinion div span>p {
-    width: 90%;
+    width: 80%;
     height: 90%;
     font-size: 20px;
     text-align: justify;
@@ -633,6 +635,10 @@
 
 #teste span:last-child {
     align-items: start;
+}
+
+#teste h3 {
+    text-align: end;
 }
 
 .opinion span h1 {
@@ -818,6 +824,10 @@
     .phoneContainer {
         display: none;
     }
+
+    .lastContainer div {
+        padding-inline: 2rem;
+    }
 }
 
 @media (max-width: 1000px) {
@@ -830,6 +840,56 @@
     .menu {
         display: block;
     }
+
+    .messageContainer {
+        padding: 1rem;
+    }
+
+    .thirdSection {
+        display: flex;
+    }
+
+    .aboutUsContainer {
+        background-color: transparent;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    .aboutUsContainer p {
+        width: 100%;
+    }
+
+    .fourthSection {
+        width: 80%;
+    }
+
+    .opinion img {
+        object-fit: cover;
+        height: 100vh;
+    }
+
+    .opinion div {
+        width: 90%;
+    }
+
+    .opinion div span p {
+        width: 100%;
+    }
+
+    .opinion div span h1 {
+        text-align: end;
+    }
+
+    #teste div h1 {
+        text-align: start;
+    }
+
+    .lastContainer {
+        width: 100%;
+        padding-inline: 2rem;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -859,14 +919,23 @@
     }
 
     .aboutUsContainer {
-        background-color: transparent;
-        top: 0;
-        left: 0;
+        position: absolute;
         border-radius: 0;
         width: 100%;
     }
+
     .aboutUsContainer p {
         color: #fff;
+    }
+
+    .servicesHeader {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .servicesHeader div {
+        width: 90%;
+        margin-bottom: 3rem;
     }
 
     .sixthSection h1 {
@@ -881,12 +950,46 @@
         width: 30%;
     }
 
-    .opinion>div {
-        padding: 2.5rem;
+    /* .opinion img{
+        object-fit: cover;
+        height: 100vh;
     }
 
-    .opinion div>p {
+    .opinion>div {
+        flex-direction: column;
+        padding: 1.5rem;
+        padding-inline: 0;
+        border: none;
+    }
+
+    .opinion span {
+        width: 100%;
+    }
+
+    .opinion div span>p {
+        width: 100%;
         width: 50%;
+        font-size: 20px;
+    }
+
+    .opinion span h1 {
+        font-size: 30px;
+    } */
+
+    .opinion>div {
+        flex-direction: column;
+        padding-inline: 0;
+        margin-block: 0;
+        height: 90%;
+        border: none;
+    }
+
+    .opinion div span>p {
+        font-size: 25px;
+    }
+
+    .opinion span {
+        width: 100%;
     }
 
     .opinion span h1 {
@@ -898,8 +1001,20 @@
     }
 
     .lastContainer {
-        width: 100%;
+        padding-inline: 4rem;
         height: 120vh;
+    }
+}
+
+@media (max-height: 760px) {
+
+    .thirdSection,
+    .img3 {
+        min-height: 690px;
+    }
+
+    .lastContainer {
+        min-height: 800px;
     }
 }
 
@@ -932,7 +1047,7 @@
     }
 
     .servicesHeader {
-        flex-direction: column;
+        align-items: center;
     }
 
     .servicesHeader div {
@@ -987,6 +1102,42 @@
         margin: 1rem 0;
         padding: 1rem 0;
     }
+
+    .opinion img {
+        object-fit: cover;
+        height: 100vh;
+    }
+
+    .opinion>div {
+        flex-direction: column;
+        padding-inline: 0;
+        margin-block: 0;
+        height: 90%;
+        border: none;
+    }
+
+    .opinion span {
+        width: 100%;
+    }
+
+    .opinion div span>p {
+        width: 100%;
+        font-size: 20px;
+    }
+
+    .opinion span h1 {
+        font-size: 30px;
+    }
+
+    #teste>div {
+        flex-direction: column;
+        width: 80%;
+    }
+
+    #teste h3 {
+        text-align: end;
+    }
+
 }
 
 @media (max-width: 400px) {
@@ -1006,6 +1157,10 @@
 
     .imgContainerTe {
         width: 100%;
+    }
+
+    .messageContainer {
+        padding: 1rem;
     }
 
     .whatWeDoContainer {

@@ -33,9 +33,6 @@ import { useState } from 'react';
 
 export default function LandingPage() {
 
-    console.log()
-    console.log(process.env.URL)
-
     const [form, setForm] = useState({
         name: '',
         phone: '',
