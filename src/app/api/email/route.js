@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server';
 import * as nodemailer from 'nodemailer'
 
-// const req = NextRequest
 export const POST = async (req) => {
     try {
         const res = NextResponse

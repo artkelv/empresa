@@ -31,9 +31,8 @@ import styles from '../styles/LandingPage.module.css'
 import axios from 'axios';
 import { useState } from 'react';
 
-export default function LandingPage(props) {
+export default function LandingPage() {
 
-    const {URL: url, WHATSAPP_NUMBER, GMAIL_PASSWORD} = props.url
 
     const [form, setForm] = useState({
         name: '',
@@ -61,8 +60,7 @@ export default function LandingPage(props) {
     ]
 
     const sendEmail = async () => {
-        // const teste = await axios.post(`${url}/api/email`, form)
-        const teste = await axios.post(`http://localhost:3000/api/email`, form)
+        const teste = await axios.post(`/api/email`, form)
             .catch(e => console.log(e))
 
         console.log(teste.data.message)
