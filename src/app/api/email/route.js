@@ -3,19 +3,20 @@ import * as nodemailer from 'nodemailer'
 
 // const req = NextRequest
 export const POST = async (req) => {
-    const res = NextResponse
+    try {
+        const res = NextResponse
 
-    const { email, name, phone, message } = await req.json()
+        const { email, name, phone, message } = await req.json()
 
-    const transporter = nodemailer.createTransport({
-        service: "gmail",
-        auth: {
-            user: 'viniolicar2004@gmail.com',
-            pass: "gysbmdfzbsqemtfi", //O tipo de senha usado é "senhas de app"
-        },
-    });
+        const transporter = nodemailer.createTransport({
+            service: "gmail",
+            auth: {
+                user: 'viniolicar2004@gmail.com',
+                pass: "gysbmdfzbsqemtfi", //O tipo de senha usado é "senhas de app"
+            },
+        });
 
-    const html = `
+        const html = `
     <div>
       <h1>Nome: ${name}</h1>
       <h1>Email: ${email}</h1>
@@ -24,20 +25,23 @@ export const POST = async (req) => {
     </div>
     `
 
-    const messages = {
-        from: 'viniolicar2004@gmail.com',
-        to: 'viniolicar2004@gmail.com',
-        subject: "Teste", // Subject line
-        html: html
-    };
+        const messages = {
+            from: 'viniolicar2004@gmail.com',
+            to: 'viniolicar2004@gmail.com',
+            subject: "Teste", // Subject line
+            html: html
+        };
 
-    let messageReturning
+        let messageReturning
 
-    transporter.sendMail(messages, (error, info) => {
-        if (error) {
-            messageReturning = 'Email não enviado'
-        }
-    })
+        transporter.sendMail(messages, (error, info) => {
+            if (error) {
+                throw new Error('Email não enviado')
+            }
+        })
 
-    return res.json({ message: 'Email não foi enviado com sucesso' })
+        return res.json({ message: 'Email foi enviado com sucesso' })
+    } catch (error) {
+        return res.json({ message: error.message })
+    }
 }
