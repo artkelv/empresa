@@ -32,8 +32,6 @@ export const POST = async (req) => {
             html: html
         };
 
-        let messageReturning
-
         transporter.sendMail(messages, (error, info) => {
             if (error) {
                 throw new Error('Email não enviado')
