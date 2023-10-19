@@ -18,6 +18,7 @@ import icon14 from '../../../public/icons/icon_14.svg'
 import icon15 from '../../../public/icons/icon_15.svg'
 import icon16 from '../../../public/icons/icon_16.svg'
 import icon17 from '../../../public/icons/icon_17.svg'
+import icon18 from '../../../public/icons/icon_18.svg'
 import img2 from '../../../public/assets/foto_2.png'
 import img4 from '../../../public/assets/foto_4.png'
 import img5 from '../../../public/assets/foto_5.png'
@@ -38,6 +39,10 @@ export default function LandingPage() {
         email: '',
         message: ''
     })
+
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [menuEvent, setMenuEvent] = useState('');
+
 
     function CreateService(img, name, url) {
         this.img = img
@@ -63,6 +68,19 @@ export default function LandingPage() {
         setForm({ name: '', phone: '', email: '', message: '' })
     }
 
+    const toggleMenu = () => {
+        if (menuEvent === '') {
+            setMenuEvent('menuOpen')
+            setIsMenuOpen(true)
+        } else if (menuEvent === 'menuOpen') {
+            setIsMenuOpen(false)
+            setMenuEvent('menuClose')
+        } else {
+            setIsMenuOpen(true)
+            setMenuEvent('menuOpen')
+        }
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.img1Container}></div>
@@ -73,7 +91,7 @@ export default function LandingPage() {
                     55 61 9 9466-2277
                 </span>
 
-                <ul className={styles.menuContainer}>
+                <ul className={styles.navContainer}>
                     <li>
                         <a href="#sobre">SOBRE</a>
                     </li>
@@ -86,6 +104,7 @@ export default function LandingPage() {
                     <li>
                         <a href="#contatos">CONTATO</a>
                     </li>
+
                 </ul>
 
                 <span className={styles.headerButtons}>
@@ -98,9 +117,27 @@ export default function LandingPage() {
                         MENSAGEM
                     </button>
                 </span>
-                <div className={styles.menu}>
+                <button className={styles.menuButton} onClick={toggleMenu}>
                     <Image src={icon17} alt='' width={0} height={0} />
-                </div>
+                </button>
+            </div>
+
+            <div className={`${styles.menuContainer} ${isMenuOpen ? styles.menuOpen : styles.menuClose}`}>
+                <button onClick={toggleMenu}>
+                    <Image src={icon18} alt='' width={0} height={0} />
+                </button>
+
+                <ul>
+                    <li>
+                        <a onClick={toggleMenu} href="#seviços">SERVIÇOS</a>
+                    </li>
+                    <li>
+                        <a onClick={toggleMenu} href="#cases">CASES</a>
+                    </li>
+                    <li>
+                        <a onClick={toggleMenu} href="#contatos">CONTATO</a>
+                    </li>
+                </ul>
             </div>
 
             <span className={styles.headerBorder}></span>
@@ -519,6 +556,11 @@ export default function LandingPage() {
                     </div>
                 </div>
             </div>
-        </div>
+            <div className={styles.fixedLinks}>
+                <a href="https://wa.me/61984977155">
+                    <Image src={icon2} alt='' width={0} height={0} />
+                </a>
+            </div>
+        </div >
     )
 }
