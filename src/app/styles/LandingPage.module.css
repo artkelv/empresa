@@ -1040,7 +1040,7 @@ div.opinion:nth-child(6) {
         min-height: 690px;
     }
 
-  
+
     .lastContainer {
         min-height: 800px;
     }
@@ -1052,7 +1052,6 @@ div.opinion:nth-child(6) {
         max-width: 400px;
         margin: 0 auto 1.5rem;
     }
-
 }
 
 @media (max-width: 563px) {
@@ -1437,6 +1436,10 @@ div.opinion:nth-child(6) {
         flex-direction: column;
         align-items: start;
         padding: 4rem 1.7rem 2rem;
+    }
+
+    .opinion div span>h1 {
+        font-size: 20px;
     }
 
     .opinion div span>p {
