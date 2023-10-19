@@ -17,6 +17,7 @@ import icon13 from '../../../public/icons/icon_13.svg'
 import icon14 from '../../../public/icons/icon_14.svg'
 import icon15 from '../../../public/icons/icon_15.svg'
 import icon16 from '../../../public/icons/icon_16.svg'
+import icon17 from '../../../public/icons/icon_17.svg'
 import img2 from '../../../public/assets/foto_2.png'
 import img4 from '../../../public/assets/foto_4.png'
 import img5 from '../../../public/assets/foto_5.png'
@@ -55,15 +56,13 @@ export default function LandingPage() {
         new CreateService(icon11, 'BLOGS', ''),
         new CreateService(icon12, 'SITES ONE PAGE', ''),
         new CreateService(icon13, 'SITE EMPRESA', ''),
-        new CreateService(icon14, 'PORTFÓLIOS', ''),
-        new CreateService('', 'TRÁFEGO PAGO', ''),
+        new CreateService(icon14, 'PORTFÓLIOS', '')
     ]
 
     const sendEmail = async () => {
         const teste = await axios.post(`/api/email`, form)
             .catch(e => console.log(e))
 
-        console.log(teste.data.message)
         setForm({ name: '', phone: '', email: '', message: '' })
     }
 
@@ -103,9 +102,7 @@ export default function LandingPage() {
                     </button>
                 </span>
                 <div className={styles.menu}>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <Image src={icon17} alt='' width={0} height={0} />
                 </div>
             </div>
 
@@ -122,11 +119,18 @@ export default function LandingPage() {
                 </div>
 
                 <div className={styles.firstSectionButtons}>
-                    <button>QUERO UM SITE</button>
-                    <button>FALAR COM ATENDENTE </button>
+                    <a href="#contatos">QUERO UM SITE</a>
+                    <a href='https://wa.me/61984977155'>FALAR COM ATENDENTE</a>
                 </div>
 
                 <div className={styles.advantageContainer}>
+                    <span className={styles.testee}>
+                        <h1>WEBTECH</h1>
+                        <p>
+                            Aqui na web-tech, levamos a serio o nosso trabalho do inicio
+                            ao fim,iremos adorar construir uma parte dda sua empres a.
+                        </p>
+                    </span>
                     <div className={styles.advantage}>
                         <Image src={icon3} alt='' width={0} height={0} />
                         <p>Profissionalismo</p>
@@ -193,7 +197,7 @@ export default function LandingPage() {
                         nesta nova fase.
                     </p>
 
-                    <button>QUERO UM SITE!</button>
+                    <a href='https://wa.me/61984977155'>QUERO UM SITE!</a>
                 </div>
             </div>
             <div className={styles.thirdSection} id='sobre'>
@@ -206,7 +210,6 @@ export default function LandingPage() {
                         QUE A WEB-TECH FOI CRIADA.
                     </h2>
                     <p>
-                        {/* Tentar adapatar colocando um do lado outro com display flex */}
                         A WEB-TECH, nasce de três mentes apaixonadas por tecnologia,
                         Francine, Arthur e Gessiel. Nos unimos para transformar ideias em
                         realidade digital desde 2023. Com foco na criação de sites
@@ -343,10 +346,11 @@ export default function LandingPage() {
                     criar algo sensacional.
                 </p>
 
-                <button>FALE CONOSCO</button>
+                <a href='https://wa.me/61984977155'>FALE CONOSCO</a>
             </div>
             <div className={styles.opinionsContainer}>
                 <div className={styles.opinionHeader}>
+                    <span></span>
                     <div>
                         <span>
                             <Image src={icon15} alt='' width={0} height={0} />
@@ -361,10 +365,11 @@ export default function LandingPage() {
                             nossos trabalhos
                         </p>
                     </div>
+                    <span></span>
                 </div>
 
                 <div className={styles.opinion}>
-                    <Image src={img9} alt='Imagem 9' width={0} height={0} />
+                    {/* <Image src={img9} alt='Imagem 9' width={0} height={0} /> */}
 
                     <div>
                         <span>
@@ -391,7 +396,7 @@ export default function LandingPage() {
                 <span className={styles.greenLine}></span>
 
                 <div className={styles.opinion} id={styles.teste}>
-                    <Image src={img10} alt='Imagem 10' width={0} height={0} />
+                    {/* <Image src={img10} alt='Imagem 10' width={0} height={0} /> */}
 
                     <div>
                         <span>
@@ -418,7 +423,7 @@ export default function LandingPage() {
                 <span className={styles.greenLine}></span>
 
                 <div className={styles.opinion}>
-                    <Image src={img11} alt='Imagem 11' width={0} height={0} />
+                    {/* <Image src={img11} alt='Imagem 11' width={0} height={0} /> */}
 
                     <div>
                         <span>
@@ -441,6 +446,14 @@ export default function LandingPage() {
                         </span>
                     </div>
                 </div>
+            </div>
+            <div className={styles.seventhSection}>
+                <h1>GOSTOU DO QUE VIU?</h1>
+                <p>
+                    Fique a vontade para nos ligar, iremos adorar fazer
+                    um excelente trabalho para a sua empresa!
+                </p>
+                <p>Falar conosco</p>
             </div>
             <div className={styles.contactUsContainer} id='contatos'>
                 <div>
