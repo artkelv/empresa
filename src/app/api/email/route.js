@@ -2,8 +2,8 @@ import { NextResponse } from 'next/server';
 import * as nodemailer from 'nodemailer'
 
 export const POST = async (req) => {
+    const res = NextResponse
     try {
-        const res = NextResponse
 
         const { email, name, phone, message } = await req.json()
 
@@ -32,7 +32,6 @@ export const POST = async (req) => {
         };
 
         // webtechdev3@gmail.com
-
         await new Promise((resolve, reject) => {
             transporter.sendMail(messages, (error, info) => {
                 if (error) {

@@ -13,7 +13,6 @@
     background-size: cover;
 }
 
-
 .headerContainer,
 .firstSection {
     position: relative;
@@ -72,6 +71,7 @@
     align-items: center;
     color: #23c963;
     border: 1px solid #23c963;
+    position: relative;
 }
 
 .headerButtons a>img {
@@ -86,9 +86,10 @@
 
 .menuButton {
     padding: 0;
+    display: none;
 }
 
-.menuButton img{
+.menuButton img {
     width: 60px;
     height: 60px;
 }
@@ -97,7 +98,7 @@
     position: absolute;
     z-index: 1;
     width: 100%;
-    top: -100vh ;
+    top: -100vh;
     background-color: #001C31;
     height: 100vh;
     padding: 3rem 2rem;
@@ -143,7 +144,7 @@
 .menuClose {
     top: -100vh;
     transition: 0.5s ease-out;
-    animation: menuClose 1s ease-out ;
+    animation: menuClose 1s ease-out;
 }
 
 .firstSection {
@@ -1110,7 +1111,7 @@ div.opinion:nth-child(6) {
         display: none;
     }
 
-    .menu {
+    .menuButton {
         display: block;
     }
 
@@ -1528,14 +1529,14 @@ div.opinion:nth-child(6) {
         font-size: 20px;
     }
 
-    .seventhSection p:last-child {
+    .seventhSection a {
         text-align: center;
         border: 3px solid #25D366;
         color: #fff;
         margin: 0;
         border-radius: 5px;
         width: 52%;
-        padding: 0.3rem;
+        padding: 1rem;
     }
 
     .lastContainer {

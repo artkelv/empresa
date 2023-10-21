@@ -64,6 +64,8 @@ export default function LandingPage() {
     const sendEmail = async () => {
         const teste = await axios.post(`/api/email`, form)
             .catch(e => console.log(e))
+            
+        console.log(teste)
 
         setForm({ name: '', phone: '', email: '', message: '' })
     }
@@ -106,7 +108,7 @@ export default function LandingPage() {
                     </li>
 
                 </ul>
-
+{/* 
                 <span className={styles.headerButtons}>
                     <a href='https://wa.me/61984977155' >
                         <Image src={icon2} alt='' width={0} height={0} />
@@ -116,7 +118,7 @@ export default function LandingPage() {
                     <button>
                         MENSAGEM
                     </button>
-                </span>
+                </span> */}
                 <button className={styles.menuButton} onClick={toggleMenu}>
                     <Image src={icon17} alt='' width={0} height={0} />
                 </button>
@@ -487,7 +489,8 @@ export default function LandingPage() {
                     Fique a vontade para nos ligar, iremos adorar fazer
                     um excelente trabalho para a sua empresa!
                 </p>
-                <p>Falar conosco</p>
+                <a href='https://wa.me/61984977155'>Falar conosco</a>
+                {/* <p>Falar conosco</p> */}
             </div>
             <div className={styles.contactUsContainer} id='contatos'>
                 <div>
