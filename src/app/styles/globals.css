@@ -16,7 +16,6 @@ body {
   scroll-behavior: smooth;
 }
 
-
 body {
   margin: 0;
   height: 100vh;
@@ -24,12 +23,6 @@ body {
 
 ul {
   list-style: none;
-}
-
-
-a {
-  color: #fff;
-  text-decoration: none;
 }
 
 button {
@@ -41,4 +34,12 @@ button {
   padding: 0 30px;
   border: 0;
   cursor: pointer;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  background-position: center;
+  transition: background 0.5s;
+  position: relative;
 }

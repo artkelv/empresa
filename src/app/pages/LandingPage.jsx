@@ -2,7 +2,6 @@
 'use client';
 
 import icon1 from '../../../public/icons/icon_1.svg'
-import icon2 from '../../../public/icons/icon_2.svg'
 import icon3 from '../../../public/icons/icon_3.svg'
 import icon4 from '../../../public/icons/icon_4.svg'
 import icon5 from '../../../public/icons/icon_5.svg'
@@ -30,8 +29,9 @@ import styles from '../styles/LandingPage.module.css'
 import axios from 'axios';
 import { useState } from 'react';
 
-export default function LandingPage() {
+import 'animate.css'
 
+export default function LandingPage() {
 
     const [form, setForm] = useState({
         name: '',
@@ -42,6 +42,8 @@ export default function LandingPage() {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [menuEvent, setMenuEvent] = useState('');
+    const [alertMessage, setAlertMessage] = useState('');
+    const [alertToggle, setAlertToggle] = useState(false)
 
 
     function CreateService(img, name, url) {
@@ -62,36 +64,48 @@ export default function LandingPage() {
     ]
 
     const sendEmail = async () => {
-        const teste = await axios.post(`/api/email`, form)
-            .catch(e => console.log(e))
-            
-        console.log(teste)
+        const apiRequest = await axios.post(`/api/email`, form)
+            .catch(e => openAlert(e.response.data.message))
 
+        openAlert(apiRequest.data.message)
         setForm({ name: '', phone: '', email: '', message: '' })
     }
 
+    // Quando expandir mais o site criar um componente só para o alert
+    const openAlert = (message) => {
+        setAlertMessage(message)
+        setAlertToggle(true)
+
+        setTimeout(() => {
+            setAlertToggle(false)
+        }, 3000);
+    }
+
     const toggleMenu = () => {
-        if (menuEvent === '') {
-            setMenuEvent('menuOpen')
-            setIsMenuOpen(true)
-        } else if (menuEvent === 'menuOpen') {
-            setIsMenuOpen(false)
-            setMenuEvent('menuClose')
-        } else {
-            setIsMenuOpen(true)
-            setMenuEvent('menuOpen')
+        switch (menuEvent) {
+            case 'menuOpen':
+                setIsMenuOpen(false)
+                setMenuEvent('menuClose')
+                break;
+
+            default:
+                setIsMenuOpen(true)
+                setMenuEvent('menuOpen')
+                break;
         }
     }
 
     return (
         <div className={styles.container}>
             <div className={styles.img1Container}></div>
+            <div className={styles.alertContainer}
+                style={!alertToggle ? { display: "none" } : {}}
+            >
+                <p>{alertMessage}</p>
+                <button onClick={e => setAlertToggle(false)}>X</button>
+            </div>
             <div className={styles.headerContainer}>
                 <a className={styles.logo} href="">WEB TECH</a>
-                <span className={styles.phoneContainer}>
-                    <Image src={icon1} alt='' width={0} height={0} />
-                    55 61 9 9466-2277
-                </span>
 
                 <ul className={styles.navContainer}>
                     <li>
@@ -108,17 +122,12 @@ export default function LandingPage() {
                     </li>
 
                 </ul>
-{/* 
-                <span className={styles.headerButtons}>
-                    <a href='https://wa.me/61984977155' >
-                        <Image src={icon2} alt='' width={0} height={0} />
-                        WHATSAPP
-                    </a>
 
-                    <button>
-                        MENSAGEM
-                    </button>
-                </span> */}
+                <span className={styles.phoneContainer}>
+                    <Image src={icon1} alt='' width={0} height={0} />
+                    55 61 9 9466-2277
+                </span>
+
                 <button className={styles.menuButton} onClick={toggleMenu}>
                     <Image src={icon17} alt='' width={0} height={0} />
                 </button>
@@ -145,8 +154,8 @@ export default function LandingPage() {
             <span className={styles.headerBorder}></span>
 
             <div className={styles.firstSection}>
-                <div className={styles.mainTexts}>
-                    <h1>O NOSSO TRABALHO</h1>
+                <div className={`${styles.mainTexts} animate__animated animate__fadeInLeft`}>
+                    <h1 >O NOSSO TRABALHO</h1>
                     <span>
                         <h1>É DEIXAR </h1>
                         <h1>A SUA EMPRESA ONLINE</h1>
@@ -155,11 +164,11 @@ export default function LandingPage() {
                 </div>
 
                 <div className={styles.firstSectionButtons}>
-                    <a href="#contatos">QUERO UM SITE</a>
-                    <a href='https://wa.me/61984977155'>FALAR COM ATENDENTE</a>
+                    <a href="#contatos" className={styles.buttonRippleEfect}>QUERO UM SITE</a>
+                    <a href='https://wa.me/61984977155' className={styles.buttonRippleEfect}>FALAR COM ATENDENTE</a>
                 </div>
 
-                <div className={styles.advantageContainer}>
+                <div className={`${styles.advantageContainer} animate__animated animate__fadeIn`}>
                     <span className={styles.testee}>
                         <h1>WEBTECH</h1>
                         <p>
@@ -207,7 +216,7 @@ export default function LandingPage() {
                 </div>
             </div>
             <div className={styles.secondSection} >
-                <div className={styles.imgContainerTe}>
+                <div className={styles.imgContainer}>
                     <Image className={styles.img2} src={img2} alt='Imagem 2' width={0} height={0} />
 
                     <div className={styles.messageContainer}>
@@ -233,7 +242,7 @@ export default function LandingPage() {
                         nesta nova fase.
                     </p>
 
-                    <a href='https://wa.me/61984977155'>QUERO UM SITE!</a>
+                    <a href='https://wa.me/61984977155' className={styles.buttonRippleEfect}>QUERO UM SITE!</a>
                 </div>
             </div>
             <div className={styles.thirdSection} id='sobre'>
@@ -326,7 +335,7 @@ export default function LandingPage() {
                         </div>
 
                         <div className={styles.caseBtnContainer}>
-                            <a href="">VISUALIZAR CASE</a>
+                            <a href="" className={styles.buttonRippleEfect}>VISUALIZAR CASE</a>
                             <button>DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
@@ -339,7 +348,7 @@ export default function LandingPage() {
                         </div>
 
                         <div className={styles.caseBtnContainer}>
-                            <a href="">VISUALIZAR CASE</a>
+                            <a href="" className={styles.buttonRippleEfect}>VISUALIZAR CASE</a>
                             <button>DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
@@ -352,8 +361,8 @@ export default function LandingPage() {
                         </div>
 
                         <div className={styles.caseBtnContainer}>
-                            <a href="">VISUALIZAR CASE</a>
-                            <button>DESCRIÇÃO DO SITE</button>
+                            <a href="" className={styles.buttonRippleEfect}>VISUALIZAR CASE</a>
+                            <button >DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
                     <div className={styles.case}>
@@ -365,8 +374,8 @@ export default function LandingPage() {
                         </div>
 
                         <div className={styles.caseBtnContainer}>
-                            <a href="">VISUALIZAR CASE</a>
-                            <button>DESCRIÇÃO DO SITE</button>
+                            <a href="" className={styles.buttonRippleEfect}>VISUALIZAR CASE</a>
+                            <button >DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
                 </div>
@@ -382,7 +391,7 @@ export default function LandingPage() {
                     criar algo sensacional.
                 </p>
 
-                <a href='https://wa.me/61984977155'>FALE CONOSCO</a>
+                <a href='https://wa.me/61984977155' className={styles.buttonRippleEfect}>FALE CONOSCO</a>
             </div>
             <div className={styles.opinionsContainer}>
                 <div className={styles.opinionHeader}>
@@ -490,7 +499,6 @@ export default function LandingPage() {
                     um excelente trabalho para a sua empresa!
                 </p>
                 <a href='https://wa.me/61984977155'>Falar conosco</a>
-                {/* <p>Falar conosco</p> */}
             </div>
             <div className={styles.contactUsContainer} id='contatos'>
                 <div>
@@ -558,11 +566,6 @@ export default function LandingPage() {
                         <p className={styles.mark}>WEB-TECH</p>
                     </div>
                 </div>
-            </div>
-            <div className={styles.fixedLinks}>
-                <a href="https://wa.me/61984977155">
-                    <Image src={icon2} alt='' width={0} height={0} />
-                </a>
             </div>
         </div >
     )

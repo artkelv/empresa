@@ -16,13 +16,13 @@ export const POST = async (req) => {
         });
 
         const html = `
-    <div>
-      <h1>Nome: ${name}</h1>
-      <h1>Email: ${email}</h1>
-      <h1>Celular: ${phone}</h1>
-      <h1>Mensagem: ${message}</h1>
-    </div>
-    `
+            <div>
+            <h1>Nome: ${name}</h1>
+            <h1>Email: ${email}</h1>
+            <h1>Celular: ${phone}</h1>
+            <h1>Mensagem: ${message}</h1>
+            </div>
+        `
 
         const messages = {
             from: 'viniolicar2004@gmail.com',
@@ -42,8 +42,8 @@ export const POST = async (req) => {
             })
         })
 
-        return res.json({ message: 'Email foi enviado com sucesso' })
+        return res.json({ message: 'Email foi enviado com sucesso' }, { status: 201 })
     } catch (error) {
-        return res.json({ message: 'Email não enviado' })
+        return res.json({ message: 'Email não enviado' }, { status: 500 })
     }
 }
