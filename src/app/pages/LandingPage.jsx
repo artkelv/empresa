@@ -336,7 +336,7 @@ export default function LandingPage() {
 
                         <div className={styles.caseBtnContainer}>
                             <a href="" className={styles.buttonRippleEfect}>VISUALIZAR CASE</a>
-                            <button>DESCRIÇÃO DO SITE</button>
+                            <button className={styles.buttonRippleEfect}>DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
                     <div className={styles.case}>
@@ -349,7 +349,7 @@ export default function LandingPage() {
 
                         <div className={styles.caseBtnContainer}>
                             <a href="" className={styles.buttonRippleEfect}>VISUALIZAR CASE</a>
-                            <button>DESCRIÇÃO DO SITE</button>
+                            <button className={styles.buttonRippleEfect}>DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
                     <div className={styles.case}>
@@ -362,7 +362,7 @@ export default function LandingPage() {
 
                         <div className={styles.caseBtnContainer}>
                             <a href="" className={styles.buttonRippleEfect}>VISUALIZAR CASE</a>
-                            <button >DESCRIÇÃO DO SITE</button>
+                            <button className={styles.buttonRippleEfect}>DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
                     <div className={styles.case}>
@@ -375,7 +375,7 @@ export default function LandingPage() {
 
                         <div className={styles.caseBtnContainer}>
                             <a href="" className={styles.buttonRippleEfect}>VISUALIZAR CASE</a>
-                            <button >DESCRIÇÃO DO SITE</button>
+                            <button className={styles.buttonRippleEfect}>DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
                 </div>
@@ -534,7 +534,7 @@ export default function LandingPage() {
                             value={form.message}>
                         </textarea>
 
-                        <button type='button' onClick={sendEmail}>ENVIAR</button>
+                        <button type='button' className={styles.buttonRippleEfect} onClick={sendEmail}>ENVIAR</button>
 
                         <span className={styles.lines}>
                             <span></span>

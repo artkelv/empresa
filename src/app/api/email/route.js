@@ -1,11 +1,13 @@
 import { NextResponse } from 'next/server';
 import * as nodemailer from 'nodemailer'
 
+
 export const POST = async (req) => {
     const res = NextResponse
     try {
-
-        const { email, name, phone, message } = await req.json()
+        checkForm(await req.json())
+        
+        const { email, name, phone, message } = form
 
         const transporter = nodemailer.createTransport({
             service: "gmail",
@@ -40,10 +42,26 @@ export const POST = async (req) => {
                     resolve()
                 }
             })
+        }).catch(e => {
+            returnError('Não foi possível enviar esse meio tente novamente.', 500)
         })
 
         return res.json({ message: 'Email foi enviado com sucesso' }, { status: 201 })
     } catch (error) {
-        return res.json({ message: 'Email não enviado' }, { status: 500 })
+        return res.json({ message: error.message }, { status: error.code })
     }
+}
+
+const checkForm = (form) => {
+    const { email, name, phone, message } = form
+
+    if (email === '' || phone === '' || name === '' || message === '') {
+        returnError('Formulário possui pelo menos um campo vazio.', 400)
+    }
+}
+
+const returnError = (errorMessage, errorCode) => {
+    const error = new Error(errorMessage)
+    error.code = errorCode
+    throw error
 }

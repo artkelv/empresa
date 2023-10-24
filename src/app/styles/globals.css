@@ -39,7 +39,4 @@ button {
 a {
   color: #fff;
   text-decoration: none;
-  background-position: center;
-  transition: background 0.5s;
-  position: relative;
 }
