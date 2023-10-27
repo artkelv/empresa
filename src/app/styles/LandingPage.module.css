@@ -1,11 +1,11 @@
-button.buttonRippleEfect,
-a.buttonRippleEfect {
+button.buttonRippleEffect,
+a.buttonRippleEffect {
     position: relative;
     background-position: center;
     transition: background 0.5s;
 }
 
-.buttonRippleEfect:after {
+.buttonRippleEffect:after {
     content: "";
     background: #f1f1f1;
     display: block;
@@ -19,7 +19,7 @@ a.buttonRippleEfect {
     border-radius: 20px;
 }
 
-.buttonRippleEfect:active:after {
+.buttonRippleEffect:active:after {
     padding: 0;
     margin: 0;
     opacity: 0.4;
@@ -760,16 +760,16 @@ div.opinion:nth-child(6) {
     height: 100vh;
 }
 
-#teste div {
+div.opinion:nth-child(4) div {
     flex-direction: row-reverse;
     align-items: flex-start;
 }
 
-#teste span:last-child {
+div.opinion:nth-child(4) span:last-child {
     align-items: start;
 }
 
-#teste h3 {
+div.opinion:nth-child(4) h3 {
     text-align: end;
 }
 
@@ -1021,7 +1021,7 @@ div.opinion:nth-child(6) {
         text-align: end;
     }
 
-    #teste div h1 {
+    div.opinion:nth-child(4) h1 {
         text-align: start;
     }
 
@@ -1112,12 +1112,16 @@ div.opinion:nth-child(6) {
         flex-direction: column;
     }
 
-    #teste>div {
+    div.opinion:nth-child(4)>div {
         flex-direction: column;
     }
 
     .opinion span:first-child>h3 {
         display: none;
+    }
+
+    .opinion>span h1 {
+        font-size: 20px;
     }
 
     .opinion span:last-child {
@@ -1457,7 +1461,7 @@ div.opinion:nth-child(6) {
         width: 100%;
         max-width: 331px;
         margin: 0 auto 1.5rem;
-        height: 450px;
+        height: 550px;
     }
 
     .case img {
@@ -1487,7 +1491,7 @@ div.opinion:nth-child(6) {
     .sixthSection h1,
     .sixthSection p {
         width: 93%;
-        text-align: start;
+        text-align: center;
     }
 
     .sixthSection a {
@@ -1546,22 +1550,22 @@ div.opinion:nth-child(6) {
         height: 90%;
     }
 
-    #teste div,
+    div.opinion:nth-child(4) div,
     .opinion div {
         width: 89%;
         border: 3px solid;
         flex-direction: column;
         align-items: start;
-        padding: 4rem 1.7rem 2rem;
-    }
-
-    .opinion div span>h1 {
-        font-size: 20px;
+        padding: 2.5rem 1.7rem 2rem;
     }
 
     .opinion div span>p {
         font-size: 15px;
-        color: #9F9F9F;
+    }
+
+    .opinion span h1,
+    .opinion span h3 {
+        font-size: 20px;
     }
 
     .opinionsContainer>.greenLine {

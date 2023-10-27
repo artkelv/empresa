@@ -164,8 +164,8 @@ export default function LandingPage() {
                 </div>
 
                 <div className={styles.firstSectionButtons}>
-                    <a href="#contatos" className={styles.buttonRippleEfect}>QUERO UM SITE</a>
-                    <a href='https://wa.me/61984977155' className={styles.buttonRippleEfect}>FALAR COM ATENDENTE</a>
+                    <a href="#contatos" className={styles.buttonRippleEffect}>QUERO UM SITE</a>
+                    <a href='https://wa.me/61984977155' className={styles.buttonRippleEffect}>FALAR COM ATENDENTE</a>
                 </div>
 
                 <div className={`${styles.advantageContainer} animate__animated animate__fadeIn`}>
@@ -226,6 +226,7 @@ export default function LandingPage() {
                 </div>
 
                 <span className={styles.verticalBorder}></span>
+
                 <div className={styles.whatWeDoContainer}>
                     <h1>O QUE FAZEMOS</h1>
                     <span></span>
@@ -242,7 +243,7 @@ export default function LandingPage() {
                         nesta nova fase.
                     </p>
 
-                    <a href='https://wa.me/61984977155' className={styles.buttonRippleEfect}>QUERO UM SITE!</a>
+                    <a href='https://wa.me/61984977155' className={styles.buttonRippleEffect}>QUERO UM SITE!</a>
                 </div>
             </div>
             <div className={styles.thirdSection} id='sobre'>
@@ -335,8 +336,8 @@ export default function LandingPage() {
                         </div>
 
                         <div className={styles.caseBtnContainer}>
-                            <a href="" className={styles.buttonRippleEfect}>VISUALIZAR CASE</a>
-                            <button className={styles.buttonRippleEfect}>DESCRIÇÃO DO SITE</button>
+                            <a href="https://ludicsrous-receipt.surge.sh/" className={styles.buttonRippleEffect}>VISUALIZAR CASE</a>
+                            <button className={styles.buttonRippleEffect}>DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
                     <div className={styles.case}>
@@ -348,8 +349,8 @@ export default function LandingPage() {
                         </div>
 
                         <div className={styles.caseBtnContainer}>
-                            <a href="" className={styles.buttonRippleEfect}>VISUALIZAR CASE</a>
-                            <button className={styles.buttonRippleEfect}>DESCRIÇÃO DO SITE</button>
+                            <a href="https://necessary-rake.surge.sh/" className={styles.buttonRippleEffect}>VISUALIZAR CASE</a>
+                            <button className={styles.buttonRippleEffect}>DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
                     <div className={styles.case}>
@@ -361,21 +362,21 @@ export default function LandingPage() {
                         </div>
 
                         <div className={styles.caseBtnContainer}>
-                            <a href="" className={styles.buttonRippleEfect}>VISUALIZAR CASE</a>
-                            <button className={styles.buttonRippleEfect}>DESCRIÇÃO DO SITE</button>
+                            <a href="https://fumblisng-celery.surge.sh/" className={styles.buttonRippleEffect}>VISUALIZAR CASE</a>
+                            <button className={styles.buttonRippleEffect}>DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
                     <div className={styles.case}>
                         <Image src={img7} alt='Imagem 7' width={0} height={0} />
 
                         <div>
-                            <h1>SMART SAÚDE</h1>
-                            <p>Empresa de Marketing</p>
+                            <h1>CORPORALI</h1>
+                            <p>Clinica de Cirurgia Plástica</p>
                         </div>
 
                         <div className={styles.caseBtnContainer}>
-                            <a href="" className={styles.buttonRippleEfect}>VISUALIZAR CASE</a>
-                            <button className={styles.buttonRippleEfect}>DESCRIÇÃO DO SITE</button>
+                            <a href="https://corporali-2b182ygyu-artkelv.vercel.app/" className={styles.buttonRippleEffect}>VISUALIZAR CASE</a>
+                            <button className={styles.buttonRippleEffect}>DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
                 </div>
@@ -391,7 +392,7 @@ export default function LandingPage() {
                     criar algo sensacional.
                 </p>
 
-                <a href='https://wa.me/61984977155' className={styles.buttonRippleEfect}>FALE CONOSCO</a>
+                <a href='https://wa.me/61984977155' className={styles.buttonRippleEffect}>FALE CONOSCO</a>
             </div>
             <div className={styles.opinionsContainer}>
                 <div className={styles.opinionHeader}>
@@ -414,18 +415,15 @@ export default function LandingPage() {
                 </div>
 
                 <div className={styles.opinion}>
-                    {/* <Image src={img9} alt='Imagem 9' width={0} height={0} /> */}
-
                     <div>
                         <span>
                             <p>
-                                Gostaria de dizer que a web tech foi
-                                excelente no que fez, gostei muito estão de
-                                parabéns. Desde o inicio eles se
-                                dispuseram a nos ajuda e foram muito
-                                solistas, o design da minha marca ficou
-                                otimo, o site ficou perfeito eu adorei, ficou
-                                lindo.
+                                Nossa empresa está profundamente grata à WEBTECH por criar uma aplicação que
+                                revolucionou a maneira como fazemos negócios. Sua expertise técnica e dedicação à
+                                excelência são evidentes em cada aspecto deste projeto. Agora, estamos mais eficientes e
+                                conectados do que nunca, e devemos isso a vocês. Obrigado por serem os mestres por trás do
+                                nosso sucesso digital.
+
                             </p>
 
                             <h3>Aguiar Confecções</h3>
@@ -440,19 +438,15 @@ export default function LandingPage() {
 
                 <span className={styles.greenLine}></span>
 
-                <div className={styles.opinion} id={styles.teste}>
-                    {/* <Image src={img10} alt='Imagem 10' width={0} height={0} /> */}
-
+                <div className={styles.opinion}>
                     <div>
                         <span>
                             <p>
-                                Gostaria de dizer que a web tech foi
-                                excelente no que fez, gostei muito estão de
-                                parabéns. Desde o inicio eles se
-                                dispuseram a nos ajuda e foram muito
-                                solistas, o design da minha marca ficou
-                                otimo, o site ficou perfeito eu adorei, ficou
-                                lindo.
+                                A WEBTECH foi fundamental na criação de nossa aplicação personalizada. Sua
+                                equipe demonstrou profissionalismo, criatividade e compromisso em atender às nossas
+                                necessidades. Graças a vocês, temos agora uma ferramenta digital de ponta que nos diferencia
+                                da concorrência. Estamos imensamente agradecidos pelo seu trabalho excepcional.
+
                             </p>
 
                             <h3>Lain Soluções LTDA</h3>
@@ -468,18 +462,14 @@ export default function LandingPage() {
                 <span className={styles.greenLine}></span>
 
                 <div className={styles.opinion}>
-                    {/* <Image src={img11} alt='Imagem 11' width={0} height={0} /> */}
-
                     <div>
                         <span>
                             <p>
-                                Gostaria de dizer que a web tech foi
-                                excelente no que fez, gostei muito estão de
-                                parabéns. Desde o inicio eles se
-                                dispuseram a nos ajuda e foram muito
-                                solistas, o design da minha marca ficou
-                                otimo, o site ficou perfeito eu adorei, ficou
-                                lindo.
+                                Queremos expressar nossa sincera gratidão à equipe da WEBTECH por criar uma
+                                aplicação sob medida que transformou completamente nossa operação. Sua dedicação e
+                                competência foram essenciais para o sucesso deste projeto. Agora, temos uma ferramenta
+                                digital que nos permite oferecer um serviço de excelência aos nossos clientes. Obrigado por
+                                serem parceiros valiosos em nossa jornada
                             </p>
 
                             <h3>Aguiar Confecções</h3>
@@ -534,7 +524,7 @@ export default function LandingPage() {
                             value={form.message}>
                         </textarea>
 
-                        <button type='button' className={styles.buttonRippleEfect} onClick={sendEmail}>ENVIAR</button>
+                        <button type='button' className={styles.buttonRippleEffect} onClick={sendEmail}>ENVIAR</button>
 
                         <span className={styles.lines}>
                             <span></span>
