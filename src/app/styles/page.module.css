@@ -19,9 +19,3 @@
 .fixedLinks img:hover {
     scale: 1.1 !important;
 }
-
-@media (max-width: 480px) {
-    .fixedLinks a {
-        margin-top: 1rem;
-    }
-}
