@@ -1,8 +1,9 @@
+/* Animação dos buttons */
 button.buttonRippleEffect,
 a.buttonRippleEffect {
     position: relative;
     background-position: center;
-    transition: background 0.5s;
+    transition: 0.5s;
 }
 
 .buttonRippleEffect:after {
@@ -64,7 +65,6 @@ a.buttonRippleEffect {
 .headerContainer,
 .firstSection {
     position: relative;
-    color: #fff;
 }
 
 .headerContainer {
@@ -82,15 +82,6 @@ a.buttonRippleEffect {
     font-weight: 400;
 }
 
-.phoneContainer {
-    display: flex;
-    align-items: center;
-}
-
-.phoneContainer img {
-    margin-right: 20px;
-}
-
 .navContainer {
     display: flex;
 }
@@ -105,6 +96,15 @@ a.buttonRippleEffect {
 
 .navContainer a:hover {
     color: #25D366;
+}
+
+.phoneContainer {
+    display: flex;
+    align-items: center;
+}
+
+.phoneContainer img {
+    margin-right: 20px;
 }
 
 .menuButton {
@@ -130,8 +130,14 @@ a.buttonRippleEffect {
 
 .menuContainer button {
     margin-bottom: 5em;
+    font-size: 25px;
     padding: 0;
     text-align: center;
+}
+
+.menuContainer img {
+    width: 50px;
+    height: 50px;
 }
 
 .menuContainer ul {
@@ -149,15 +155,6 @@ a.buttonRippleEffect {
 
 .menuContainer li:hover {
     background-color: #ffffff7b;
-}
-
-.menuContainer button {
-    font-size: 25px;
-}
-
-.menuContainer img {
-    width: 50px;
-    height: 50px;
 }
 
 .menuOpen {
@@ -180,16 +177,16 @@ a.buttonRippleEffect {
     padding-top: 9rem;
 }
 
-.mainTexts span>h1 {
-    display: inline;
-}
-
 .mainTexts h1 {
     margin-bottom: 10px;
     font-size: 50px;
     line-height: 70px;
     font-family: Antonio;
     font-weight: 400;
+}
+
+.mainTexts span>h1 {
+    display: inline;
 }
 
 .mainTexts h1:last-child {
@@ -215,21 +212,21 @@ a.buttonRippleEffect {
     font-family: Antonio;
 }
 
-.firstSectionButtons a:last-child:after {
-    background-color: #00000078;
-}
-
 .firstSectionButtons a:first-child {
     background-color: #25d366;
     margin-right: 20px;
+}
+
+.firstSectionButtons a:first-child:hover {
+    background-color: #17843f;
 }
 
 .firstSectionButtons a:last-child {
     border: 1px solid #fff;
 }
 
-.firstSectionButtons a:first-child:hover {
-    background-color: #17843f;
+.firstSectionButtons a:last-child:after {
+    background-color: #00000078;
 }
 
 .firstSectionButtons a:last-child:hover {
@@ -244,7 +241,7 @@ a.buttonRippleEffect {
     padding-bottom: 4rem;
 }
 
-.testee {
+.advantageText {
     display: none;
 }
 
@@ -504,14 +501,14 @@ div.advantage:first-of-type {
     margin-bottom: 2rem;
 }
 
-.fifthSectionHeader span :last-child {
-    color: #25d366;
-}
-
 .fifthSectionHeader h1 {
     font-size: 35px;
     margin-bottom: 2rem;
     display: inline;
+}
+
+.fifthSectionHeader span :last-child {
+    color: #25d366;
 }
 
 .fifthSectionHeader p {
@@ -582,32 +579,32 @@ div.advantage:first-of-type {
     font-weight: 700;
 }
 
-.caseBtnContainer a::after {
-    border-radius: 14px;
-}
-
-.caseBtnContainer button::after {
-    border-radius: 14px;
-    background-color: #0000005b;
-}
-
-.caseBtnContainer :first-child {
+.caseBtnContainer a {
     background-color: #25d366;
     text-align: center;
     font-size: 12px;
 }
 
-.caseBtnContainer :last-child {
+.caseBtnContainer a:hover {
+    background-color: #17843f;
+}
+
+.caseBtnContainer a::after {
+    border-radius: 14px;
+}
+
+.caseBtnContainer button {
     border: 2px solid #50d28a;
     transition: 0.5s;
 }
 
-.caseBtnContainer :first-child:hover {
-    background-color: #17843f;
+.caseBtnContainer button:hover {
+    background-color: #50d28a;
 }
 
-.caseBtnContainer :last-child:hover {
-    background-color: #50d28a;
+.caseBtnContainer button::after {
+    border-radius: 14px;
+    background-color: #0000005b;
 }
 
 .sixthSection {
@@ -664,32 +661,32 @@ div.advantage:first-of-type {
     margin-bottom: 5rem;
 }
 
-.opinionHeader>span {
+.opinionHeaderLine {
     width: 50%;
     height: 3px;
     background-color: #fff;
 }
 
-.opinionHeader div {
+.opinionHeaderContent {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1rem 0 3rem;
 }
 
-.opinionHeader span {
+.opinionHeaderContent span {
     display: flex;
     align-items: flex-start;
     margin-bottom: 1rem;
 }
 
-.opinionHeader h1 {
+.opinionHeaderContent h1 {
     text-align: center;
     font-size: 35px;
     margin: 2rem 20px 0rem 20px;
 }
 
-.opinionHeader p {
+.opinionHeaderContent p {
     text-align: center;
     width: 74%;
     font-size: 20px;
@@ -705,43 +702,7 @@ div.advantage:first-of-type {
     position: relative;
 }
 
-.opinion img {
-    width: 100%;
-    height: auto;
-    opacity: 0.5;
-}
-
-.opinion>div {
-    position: absolute;
-    border: 3px solid #fff;
-    display: flex;
-    align-items: flex-end;
-    margin: 5rem 0;
-    height: 75%;
-    width: 80%;
-    padding: 5%;
-}
-
-.opinion span {
-    width: 50%;
-    height: 100%;
-}
-
-.opinion span:last-child {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: end;
-    height: 100%;
-}
-
-.opinion div span>p {
-    width: 80%;
-    height: 90%;
-    font-size: 20px;
-    text-align: justify;
-}
-
+/* Imagens de fundos */
 div.opinion:nth-child(2) {
     background-image: linear-gradient(#001c31b1, #001c31b1), url("../../../public/assets/foto_9.jpg");
     background-size: cover;
@@ -760,17 +721,35 @@ div.opinion:nth-child(6) {
     height: 100vh;
 }
 
-div.opinion:nth-child(4) div {
-    flex-direction: row-reverse;
-    align-items: flex-start;
+.opinion>div {
+    position: absolute;
+    border: 3px solid #fff;
+    display: flex;
+    align-items: flex-end;
+    margin: 5rem 0;
+    height: 75%;
+    width: 80%;
+    padding: 5%;
 }
 
-div.opinion:nth-child(4) span:last-child {
-    align-items: start;
+.opinion>div>span {
+    width: 50%;
+    height: 100%;
 }
 
-div.opinion:nth-child(4) h3 {
-    text-align: end;
+.opinion>div>span>p {
+    width: 80%;
+    height: 90%;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.opinion>div>span:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: end;
+    height: 100%;
 }
 
 .opinion span h1 {
@@ -782,6 +761,19 @@ div.opinion:nth-child(4) h3 {
     font-size: 22px;
     margin: 0;
     color: #25d366;
+}
+
+div.opinion:nth-child(4) div {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+}
+
+div.opinion:nth-child(4) span:last-child {
+    align-items: start;
+}
+
+div.opinion:nth-child(4) h3 {
+    text-align: end;
 }
 
 .opinionsContainer>.greenLine {
@@ -839,6 +831,11 @@ div.opinion:nth-child(4) h3 {
     position: relative;
 }
 
+.form>input::placeholder,
+.form>textarea::placeholder {
+    color: #fff;
+}
+
 .form input {
     border: 3px solid #25d366;
     background-color: transparent;
@@ -869,12 +866,12 @@ div.opinion:nth-child(4) h3 {
     transition: 0.4s;
 }
 
-.form button::after {
-    border-radius: 0;
-}
-
 .form button:hover {
     background-color: #17843f;
+}
+
+.form button::after {
+    border-radius: 0;
 }
 
 .lines {
@@ -900,10 +897,6 @@ div.opinion:nth-child(4) h3 {
     width: 146px;
 }
 
-.form>input::placeholder,
-.form>textarea::placeholder {
-    color: #fff;
-}
 
 .contactUsContainer>div>span:last-child {
     font-size: 12px;
@@ -943,14 +936,14 @@ div.opinion:nth-child(4) h3 {
     font-size: 40px;
 }
 
-.lastContainer h2 {
-    width: 90%;
-    font-size: 28px;
-}
-
 .lastContainer>div>h2,
 .lastContainer>div>p {
     margin-bottom: 5rem;
+}
+
+.lastContainer h2 {
+    width: 90%;
+    font-size: 28px;
 }
 
 .lastContainer p {
@@ -1321,7 +1314,7 @@ div.opinion:nth-child(4) h3 {
         margin-inline: auto;
     }
 
-    .testee {
+    .advantageText {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1330,12 +1323,12 @@ div.opinion:nth-child(4) h3 {
         margin-inline: auto;
     }
 
-    .testee h1 {
+    .advantageText h1 {
         color: #25D366;
         margin-bottom: 2rem;
     }
 
-    .testee p {
+    .advantageText p {
         width: 100%;
         text-align: center;
     }
@@ -1552,11 +1545,14 @@ div.opinion:nth-child(4) h3 {
 
     div.opinion:nth-child(4) div,
     .opinion div {
-        width: 89%;
         border: 3px solid;
         flex-direction: column;
         align-items: start;
         padding: 2.5rem 1.7rem 2rem;
+    }
+
+    .opinion>div>span {
+        width: 100%;
     }
 
     .opinion div span>p {

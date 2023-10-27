@@ -18,6 +18,7 @@ import icon15 from '../../../public/icons/icon_15.svg'
 import icon16 from '../../../public/icons/icon_16.svg'
 import icon17 from '../../../public/icons/icon_17.svg'
 import icon18 from '../../../public/icons/icon_18.svg'
+
 import img2 from '../../../public/assets/foto_2.png'
 import img4 from '../../../public/assets/foto_4.png'
 import img5 from '../../../public/assets/foto_5.png'
@@ -33,6 +34,9 @@ import 'animate.css'
 
 export default function LandingPage() {
 
+    const [menuEvent, setMenuEvent] = useState('');
+    const [alertMessage, setAlertMessage] = useState('');
+    const [alertToggle, setAlertToggle] = useState(false)
     const [form, setForm] = useState({
         name: '',
         phone: '',
@@ -40,39 +44,30 @@ export default function LandingPage() {
         message: ''
     })
 
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [menuEvent, setMenuEvent] = useState('');
-    const [alertMessage, setAlertMessage] = useState('');
-    const [alertToggle, setAlertToggle] = useState(false)
-
-
-    function CreateService(img, name, url) {
-        this.img = img
-        this.name = name
-        this.url = url
-    }
-
     const services = [
-        new CreateService(icon7, 'SITES COMERCIAIS', ''),
-        new CreateService(icon8, 'LANDING PAGES', ''),
-        new CreateService(icon9, 'SITES INSTITUCIONAIS', ''),
-        new CreateService(icon10, 'E-COMMERCES', ''),
-        new CreateService(icon11, 'BLOGS', ''),
-        new CreateService(icon12, 'SITES ONE PAGE', ''),
-        new CreateService(icon13, 'SITE EMPRESA', ''),
-        new CreateService(icon14, 'PORTFÓLIOS', '')
+        { img: icon7, name: 'SITES COMERCIAIS', url: '' },
+        { img: icon8, name: 'LANDING PAGES', url: '' },
+        { img: icon9, name: 'SITES INSTITUCIONAIS', url: '' },
+        { img: icon10, name: 'E-COMMERCES', url: '' },
+        { img: icon11, name: 'BLOGS', url: '' },
+        { img: icon12, name: 'SITES ONE PAGE', url: '' },
+        { img: icon13, name: 'SITE EMPRESA', url: '' },
+        { img: icon14, name: 'PORTFÓLIOS', url: '' },
     ]
 
-    const sendEmail = async () => {
-        const apiRequest = await axios.post(`/api/email`, form)
-            .catch(e => openAlert(e.response.data.message))
+    const whatsappLink = "https://wa.me/61984977155"
 
-        openAlert(apiRequest.data.message)
-        setForm({ name: '', phone: '', email: '', message: '' })
+    const sendEmail = () => {
+        axios.post(`/api/email`, form)
+            .then(res => {
+                openAlert(res.data.message)
+                setForm({ name: '', phone: '', email: '', message: '' })
+            })
+            .catch(e => openAlert(e.response.data.message))
     }
 
-    // Quando expandir mais o site criar um componente só para o alert
     const openAlert = (message) => {
+        // Quando expandir mais o site criar um componente só para o alert
         setAlertMessage(message)
         setAlertToggle(true)
 
@@ -133,7 +128,7 @@ export default function LandingPage() {
                 </button>
             </div>
 
-            <div className={`${styles.menuContainer} ${isMenuOpen ? styles.menuOpen : styles.menuClose}`}>
+            <div className={`${styles.menuContainer} ${styles[menuEvent]}`}>
                 <button onClick={toggleMenu}>
                     <Image src={icon18} alt='' width={0} height={0} />
                 </button>
@@ -165,11 +160,11 @@ export default function LandingPage() {
 
                 <div className={styles.firstSectionButtons}>
                     <a href="#contatos" className={styles.buttonRippleEffect}>QUERO UM SITE</a>
-                    <a href='https://wa.me/61984977155' className={styles.buttonRippleEffect}>FALAR COM ATENDENTE</a>
+                    <a href={whatsappLink} className={styles.buttonRippleEffect}>FALAR COM ATENDENTE</a>
                 </div>
 
                 <div className={`${styles.advantageContainer} animate__animated animate__fadeIn`}>
-                    <span className={styles.testee}>
+                    <span className={styles.advantageText}>
                         <h1>WEBTECH</h1>
                         <p>
                             Aqui na web-tech, levamos a serio o nosso trabalho do inicio
@@ -243,7 +238,7 @@ export default function LandingPage() {
                         nesta nova fase.
                     </p>
 
-                    <a href='https://wa.me/61984977155' className={styles.buttonRippleEffect}>QUERO UM SITE!</a>
+                    <a href={whatsappLink} className={styles.buttonRippleEffect}>QUERO UM SITE!</a>
                 </div>
             </div>
             <div className={styles.thirdSection} id='sobre'>
@@ -393,12 +388,12 @@ export default function LandingPage() {
                     criar algo sensacional.
                 </p>
 
-                <a href='https://wa.me/61984977155' className={styles.buttonRippleEffect}>FALE CONOSCO</a>
+                <a href={whatsappLink} className={styles.buttonRippleEffect}>FALE CONOSCO</a>
             </div>
             <div className={styles.opinionsContainer}>
                 <div className={styles.opinionHeader}>
-                    <span></span>
-                    <div>
+                    <span className={styles.opinionHeaderLine}></span>
+                    <div className={styles.opinionHeaderContent}>
                         <span>
                             <Image src={icon15} alt='' width={0} height={0} />
 
@@ -412,7 +407,7 @@ export default function LandingPage() {
                             nossos trabalhos
                         </p>
                     </div>
-                    <span></span>
+                    <span className={styles.opinionHeaderLine}></span>
                 </div>
 
                 <div className={styles.opinion}>
@@ -489,7 +484,7 @@ export default function LandingPage() {
                     Fique a vontade para nos ligar, iremos adorar fazer
                     um excelente trabalho para a sua empresa!
                 </p>
-                <a href='https://wa.me/61984977155'>Falar conosco</a>
+                <a href={whatsappLink}>Falar conosco</a>
             </div>
             <div className={styles.contactUsContainer} id='contatos'>
                 <div>
