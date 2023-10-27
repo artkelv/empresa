@@ -327,6 +327,7 @@ export default function LandingPage() {
                 </div>
 
                 <div className={styles.casesContainer}>
+                    {/* Talvez adicionar img como background */}
                     <div className={styles.case}>
                         <Image src={img4} alt='Imagem 4' width={0} height={0} />
 
