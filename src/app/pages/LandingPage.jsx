@@ -14,10 +14,9 @@ import icon11 from '../../../public/icons/icon_11.svg'
 import icon12 from '../../../public/icons/icon_12.svg'
 import icon13 from '../../../public/icons/icon_13.svg'
 import icon14 from '../../../public/icons/icon_14.svg'
-import icon15 from '../../../public/icons/icon_15.svg'
-import icon16 from '../../../public/icons/icon_16.svg'
 import icon17 from '../../../public/icons/icon_17.svg'
 import icon18 from '../../../public/icons/icon_18.svg'
+import icon19 from '../../../public/icons/icon_19.svg'
 
 import img2 from '../../../public/assets/foto_2.png'
 import img4 from '../../../public/assets/foto_4.png'
@@ -46,6 +45,7 @@ export default function LandingPage() {
 
     const services = [
         { img: icon7, name: 'SITES COMERCIAIS', url: '' },
+        { img: icon19, name: 'Design de Páginas Web', url: '', new: true },
         { img: icon8, name: 'LANDING PAGES', url: '' },
         { img: icon9, name: 'SITES INSTITUCIONAIS', url: '' },
         { img: icon10, name: 'E-COMMERCES', url: '' },
@@ -77,14 +77,13 @@ export default function LandingPage() {
     }
 
     const toggleMenu = () => {
+        console.log(menuEvent)
         switch (menuEvent) {
             case 'menuOpen':
-                setIsMenuOpen(false)
                 setMenuEvent('menuClose')
                 break;
 
             default:
-                setIsMenuOpen(true)
                 setMenuEvent('menuOpen')
                 break;
         }
@@ -151,10 +150,8 @@ export default function LandingPage() {
             <div className={styles.firstSection}>
                 <div className={`${styles.mainTexts} animate__animated animate__fadeInLeft`}>
                     <h1 >O NOSSO TRABALHO</h1>
-                    <span>
-                        <h1>É DEIXAR </h1>
-                        <h1>A SUA EMPRESA ONLINE</h1>
-                    </span>
+                    <h1> É DEIXAR </h1>
+                    <h1>A SUA EMPRESA ONLINE</h1>
                     <p>Venha construir o site da sua empresa com quem entende do assunto.</p>
                 </div>
 
@@ -162,51 +159,55 @@ export default function LandingPage() {
                     <a href="#contatos" className={styles.buttonRippleEffect}>QUERO UM SITE</a>
                     <a href={whatsappLink} className={styles.buttonRippleEffect}>FALAR COM ATENDENTE</a>
                 </div>
+            </div>
 
+            <div className={styles.testeSection}>
                 <div className={`${styles.advantageContainer} animate__animated animate__fadeIn`}>
                     <span className={styles.advantageText}>
                         <h1>WEBTECH</h1>
                         <p>
                             Aqui na web-tech, levamos a serio o nosso trabalho do inicio
-                            ao fim,iremos adorar construir uma parte dda sua empres a.
+                            ao fim,iremos adorar construir uma parte da sua empresa.
                         </p>
                     </span>
-                    <div className={styles.advantage}>
-                        <Image src={icon3} alt='' width={0} height={0} />
-                        <p>Profissionalismo</p>
-                        <p>
-                            Combinamos conhecimento técnico com ética de trabalho
-                            exemplar para criar o seu site
-                        </p>
-                    </div>
+                    <div>
+                        <div className={styles.advantage}>
+                            <Image src={icon3} alt='' width={0} height={0} />
+                            <p>Profissionalismo</p>
+                            <p>
+                                Combinamos conhecimento técnico com ética de trabalho
+                                exemplar para criar o seu site
+                            </p>
+                        </div>
 
-                    <div className={styles.advantage}>
-                        <Image src={icon4} alt='' width={0} height={0} />
-                        <p>Responsabilidade</p>
-                        <p>
-                            Assumimos a responsabilidade
-                            de transformar suas aspirações
-                            em realidade digital.
-                        </p>
-                    </div>
+                        <div className={styles.advantage}>
+                            <Image src={icon4} alt='' width={0} height={0} />
+                            <p>Responsabilidade</p>
+                            <p>
+                                Assumimos a responsabilidade
+                                de transformar suas aspirações
+                                em realidade digital.
+                            </p>
+                        </div>
 
-                    <div className={styles.advantage}>
-                        <Image src={icon5} alt='' width={0} height={0} />
-                        <p>Criativa</p>
-                        <p>
-                            Somos apaixonados por
-                            transformar ideias em experiências
-                            cativantes.
-                        </p>
-                    </div>
+                        <div className={styles.advantage}>
+                            <Image src={icon5} alt='' width={0} height={0} />
+                            <p>Criativa</p>
+                            <p>
+                                Somos apaixonados por
+                                transformar ideias em experiências
+                                cativantes.
+                            </p>
+                        </div>
 
-                    <div className={styles.advantage}>
-                        <Image src={icon6} alt='' width={0} height={0} />
-                        <p>Inovadora</p>
-                        <p>
-                            Aqui levamos o que fazemos a
-                            sério, é sua empresa no topo!
-                        </p>
+                        <div className={styles.advantage}>
+                            <Image src={icon6} alt='' width={0} height={0} />
+                            <p>Inovadora</p>
+                            <p>
+                                Aqui levamos o que fazemos a
+                                sério, é sua empresa no topo!
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -295,7 +296,13 @@ export default function LandingPage() {
                     {
                         services.map(service => {
                             return (
-                                <div className={styles.service} key={service?.name}>
+                                <div className={`${styles.service} ${service.new ? styles.newService : ''}`} key={service?.name}>
+                                    <span
+                                        style={service.new ? { display: 'block' } : { display: 'none' }}
+                                        className={styles.new}
+                                    >
+                                        Novidade
+                                    </span>
                                     <Image src={service?.img} alt='' width={0} height={0} />
                                     <p>{service?.name}</p>
                                 </div>
@@ -303,7 +310,6 @@ export default function LandingPage() {
                         })
                     }
                 </div>
-
             </div>
 
             <span className={styles.greenLine}></span>
@@ -322,7 +328,6 @@ export default function LandingPage() {
                 </div>
 
                 <div className={styles.casesContainer}>
-                    {/* Talvez adicionar img como background */}
                     <div className={styles.case}>
                         <Image src={img4} alt='Imagem 4' width={0} height={0} />
 
@@ -394,13 +399,7 @@ export default function LandingPage() {
                 <div className={styles.opinionHeader}>
                     <span className={styles.opinionHeaderLine}></span>
                     <div className={styles.opinionHeaderContent}>
-                        <span>
-                            <Image src={icon15} alt='' width={0} height={0} />
-
-                            <h1>OPINIÕES DE NOSSOS CLIENTES</h1>
-
-                            <Image src={icon16} alt='' width={0} height={0} />
-                        </span>
+                        <h1>OPINIÕES DE NOSSOS CLIENTES</h1>
 
                         <p>
                             Confira o que os nossos clientes dizem sobre os
@@ -414,15 +413,20 @@ export default function LandingPage() {
                     <div>
                         <span>
                             <p>
-                                Nossa empresa está profundamente grata à WEBTECH por criar uma aplicação que
+                                {/* Nossa empresa está profundamente grata à WEBTECH por criar uma aplicação que
                                 revolucionou a maneira como fazemos negócios. Sua expertise técnica e dedicação à
                                 excelência são evidentes em cada aspecto deste projeto. Agora, estamos mais eficientes e
                                 conectados do que nunca, e devemos isso a vocês. Obrigado por serem os mestres por trás do
-                                nosso sucesso digital.
+                                nosso sucesso digital. */}
 
+                                A WEBTECH foi fundamental na criação de nossa aplicação personalizada.
+                                Sua equipe demonstrou profissionalismo, criatividade e compromisso em
+                                atender às nossas necessidades. Graças a vocês, temos agora uma
+                                ferramenta digital de ponta que nos diferencia da concorrência.
+                                Estamos imensamente agradecidos pelo seu trabalho excepcional.
                             </p>
 
-                            <h3>Aguiar Confecções</h3>
+                            <h3 className={styles.companyName}>Aguiar Confecções</h3>
                         </span>
 
                         <span>
@@ -438,14 +442,19 @@ export default function LandingPage() {
                     <div>
                         <span>
                             <p>
-                                A WEBTECH foi fundamental na criação de nossa aplicação personalizada. Sua
+                                {/* A WEBTECH foi fundamental na criação de nossa aplicação personalizada. Sua
                                 equipe demonstrou profissionalismo, criatividade e compromisso em atender às nossas
                                 necessidades. Graças a vocês, temos agora uma ferramenta digital de ponta que nos diferencia
-                                da concorrência. Estamos imensamente agradecidos pelo seu trabalho excepcional.
+                                da concorrência. Estamos imensamente agradecidos pelo seu trabalho excepcional. */}
+
+                                Nossa empresa está profundamente grata à WEBTECH por criar uma aplicação que revolucionou a maneira como fazemos negócios.
+                                Sua expertise técnica e dedicação à excelência são evidentes em cada aspecto deste projeto.
+                                Agora, estamos mais eficientes e conectados do que nunca, e devemos isso a vocês.
+                                Obrigado por serem os mestres por trás do nosso sucesso digital.
 
                             </p>
 
-                            <h3>Lain Soluções LTDA</h3>
+                            <h3 className={styles.companyName}>Lain Soluções LTDA</h3>
                         </span>
 
                         <span>
@@ -468,7 +477,7 @@ export default function LandingPage() {
                                 serem parceiros valiosos em nossa jornada
                             </p>
 
-                            <h3>Aguiar Confecções</h3>
+                            <h3 className={styles.companyName}>Aguiar Confecções</h3>
                         </span>
 
                         <span>
@@ -479,11 +488,13 @@ export default function LandingPage() {
                 </div>
             </div>
             <div className={styles.seventhSection}>
-                <h1>GOSTOU DO QUE VIU?</h1>
-                <p>
-                    Fique a vontade para nos ligar, iremos adorar fazer
-                    um excelente trabalho para a sua empresa!
-                </p>
+                <div>
+                    <h1>GOSTOU DO QUE VIU?</h1>
+                    <p>
+                        Fique a vontade para nos ligar, iremos adorar fazer
+                        um excelente trabalho para a sua empresa!
+                    </p>
+                </div>
                 <a href={whatsappLink}>Falar conosco</a>
             </div>
             <div className={styles.contactUsContainer} id='contatos'>
