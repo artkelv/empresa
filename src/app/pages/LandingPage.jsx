@@ -118,18 +118,18 @@ export default function LandingPage() {
                 </ul>
 
                 <span className={styles.phoneContainer}>
-                    <Image src={icon1} alt='' width={0} height={0} />
+                    <Image src={icon1} alt='' width="auto" height="auto" />
                     55 61 9 9466-2277
                 </span>
 
                 <button className={styles.menuButton} onClick={toggleMenu}>
-                    <Image src={icon17} alt='' width={0} height={0} />
+                    <Image src={icon17} alt='' width="auto" height="auto" />
                 </button>
             </div>
 
             <div className={`${styles.menuContainer} ${styles[menuEvent]}`}>
                 <button onClick={toggleMenu}>
-                    <Image src={icon18} alt='' width={0} height={0} />
+                    <Image src={icon18} alt='' width="auto" height="auto" />
                 </button>
 
                 <ul>
@@ -172,7 +172,7 @@ export default function LandingPage() {
                     </span>
                     <div>
                         <div className={styles.advantage}>
-                            <Image src={icon3} alt='' width={0} height={0} />
+                            <Image src={icon3} alt='' width="auto" height="auto" />
                             <p>Profissionalismo</p>
                             <p>
                                 Combinamos conhecimento técnico com ética de trabalho
@@ -181,7 +181,7 @@ export default function LandingPage() {
                         </div>
 
                         <div className={styles.advantage}>
-                            <Image src={icon4} alt='' width={0} height={0} />
+                            <Image src={icon4} alt='' width="auto" height="auto" />
                             <p>Responsabilidade</p>
                             <p>
                                 Assumimos a responsabilidade
@@ -191,7 +191,7 @@ export default function LandingPage() {
                         </div>
 
                         <div className={styles.advantage}>
-                            <Image src={icon5} alt='' width={0} height={0} />
+                            <Image src={icon5} alt='' width="auto" height="auto" />
                             <p>Criativa</p>
                             <p>
                                 Somos apaixonados por
@@ -201,7 +201,7 @@ export default function LandingPage() {
                         </div>
 
                         <div className={styles.advantage}>
-                            <Image src={icon6} alt='' width={0} height={0} />
+                            <Image src={icon6} alt='' width="auto" height="auto" />
                             <p>Inovadora</p>
                             <p>
                                 Aqui levamos o que fazemos a
@@ -213,7 +213,7 @@ export default function LandingPage() {
             </div>
             <div className={styles.secondSection} >
                 <div className={styles.imgContainer}>
-                    <Image className={styles.img2} src={img2} alt='Imagem 2' width={0} height={0} />
+                    <Image className={styles.img2} src={img2} alt='Imagem 2' width="auto" height="auto" />
 
                     <div className={styles.messageContainer}>
                         <h1>"A sua empresa precisa estar online."</h1>
@@ -303,7 +303,7 @@ export default function LandingPage() {
                                     >
                                         Novidade
                                     </span>
-                                    <Image src={service?.img} alt='' width={0} height={0} />
+                                    <Image src={service?.img} alt='' width="auto" height="auto" />
                                     <p>{service?.name}</p>
                                 </div>
                             )
@@ -329,7 +329,7 @@ export default function LandingPage() {
 
                 <div className={styles.casesContainer}>
                     <div className={styles.case}>
-                        <Image src={img4} alt='Imagem 4' width={0} height={0} />
+                        <Image src={img4} alt='Imagem 4' width="auto" height="auto" />
 
                         <div>
                             <h1>LILIUM CASE</h1>
@@ -342,7 +342,7 @@ export default function LandingPage() {
                         </div>
                     </div>
                     <div className={styles.case}>
-                        <Image src={img5} alt='Imagem 5' width={0} height={0} />
+                        <Image src={img5} alt='Imagem 5' width="auto" height="auto" />
 
                         <div>
                             <h1>FRANCY SEGUROS</h1>
@@ -355,7 +355,7 @@ export default function LandingPage() {
                         </div>
                     </div>
                     <div className={styles.case}>
-                        <Image src={img6} alt='Imagem 6' width={0} height={0} />
+                        <Image src={img6} alt='Imagem 6' width="auto" height="auto" />
 
                         <div>
                             <h1>IPAM</h1>
@@ -368,7 +368,7 @@ export default function LandingPage() {
                         </div>
                     </div>
                     <div className={styles.case}>
-                        <Image src={img7} alt='Imagem 7' width={0} height={0} />
+                        <Image src={img7} alt='Imagem 7' width="auto" height="auto" />
 
                         <div>
                             <h1>CORPORALI</h1>
@@ -510,22 +510,25 @@ export default function LandingPage() {
                     </span>
                     <form className={styles.form}>
                         <input type="text"
+                            name="name"
                             placeholder="Nome"
                             onChange={e => setForm({ ...form, name: e.target.value })}
                             value={form.name} />
 
                         <input type="text"
+                            name="phone"
                             placeholder="Celular"
                             onChange={e => setForm({ ...form, phone: e.target.value })}
                             value={form.phone} />
 
                         <input type="text"
+                            name="email"
                             placeholder="Email"
                             onChange={e => setForm({ ...form, email: e.target.value })}
                             value={form.email} />
 
                         <textarea placeholder="Mensagem"
-                            name=""
+                            name="message"
                             cols="30" rows="3"
                             onChange={e => setForm({ ...form, message: e.target.value })}
                             value={form.message}>

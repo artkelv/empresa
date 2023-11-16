@@ -122,7 +122,7 @@ a.buttonRippleEffect {
     position: absolute;
     z-index: 1;
     width: 100%;
-    top: -100vh;
+    top: -200vh;
     background-color: #001C31;
     height: 100vh;
     padding: 3rem 2rem;
@@ -163,9 +163,8 @@ a.buttonRippleEffect {
 }
 
 .menuClose {
-    top: -100vh;
+    top: -200vh;
     transition: 0.5s ease-out;
-    animation: menuClose 1s ease-out;
 }
 
 .headerBorder {
@@ -299,7 +298,7 @@ div.advantage:first-of-type {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5rem 10rem 0rem 2rem;
+    padding: 5rem 10% 0rem 2rem;
     margin-bottom: 9rem;
 }
 
@@ -403,7 +402,7 @@ div.advantage:first-of-type {
 .thirdSection .img3 {
     flex: 1;
     width: 50%;
-    height: 90vh;
+    height: 785px;
     background-image: url('../../../public/assets/image_2.png');
     background-size: cover;
 }
@@ -436,7 +435,8 @@ div.advantage:first-of-type {
     margin-bottom: 2rem;
     color: #E2E2E2;
     font-weight: 300;
-    width: 85%;
+    font-size: 18px;
+    width: 100%;
 }
 
 .greenLine {
@@ -484,10 +484,9 @@ div.advantage:first-of-type {
 
 .servicesContainer {
     width: 100%;
-    display: flex;
-    flex-flow: wrap;
-    justify-content: center;
-    gap: 35px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 36px;
 }
 
 .service {
@@ -496,7 +495,6 @@ div.advantage:first-of-type {
     align-items: center;
     position: relative;
     border: 2px solid #25d366;
-    min-width: 210px;
 }
 
 .service img {
@@ -523,9 +521,9 @@ div.advantage:first-of-type {
     top: -20px;
 }
 
+
 .newService {
-    /* width: 46%; */
-    width: 440px;
+    grid-column: span 2;
 }
 
 .fifthSection {
@@ -571,7 +569,7 @@ div.advantage:first-of-type {
     padding-bottom: 2rem;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     justify-content: space-between;
     background-size: cover;
     position: relative;
@@ -660,6 +658,7 @@ div.advantage:first-of-type {
     margin-bottom: 7rem;
     background: center url(../../../public/assets/foto_8.png);
     background-size: cover;
+    width: 100%;
     height: 624px;
 }
 
@@ -732,12 +731,13 @@ div.advantage:first-of-type {
 }
 
 .opinion {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
-    height: 100vh;
+    height: 810px;
+    width: 100%;
 }
 
 /* Imagens de fundos */
@@ -783,7 +783,7 @@ div.opinion:nth-child(6) {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    align-items: end;
+    align-items: flex-end;
     height: 100%;
 }
 
@@ -804,7 +804,7 @@ div.opinion:nth-child(4) div {
 }
 
 div.opinion:nth-child(4) span:last-child {
-    align-items: start;
+    align-items: flex-start;
 }
 
 div.opinion:nth-child(4) h3 {
@@ -888,7 +888,7 @@ div.opinion:nth-child(4) h3 {
 .form {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     margin: 2rem 0;
     padding: 0 5rem;
     position: relative;
@@ -940,7 +940,7 @@ div.opinion:nth-child(4) h3 {
 .lines {
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: flex-end;
     position: absolute;
     right: 0;
     bottom: 0;
@@ -977,21 +977,29 @@ div.opinion:nth-child(4) h3 {
 }
 
 .lastContainer {
+    display: flex;
+    justify-content: center;
     background-image: url(../../../public/assets/foto_12.png);
+    background-position: center;
     box-sizing: border-box;
     color: #fff;
-    padding: 6rem 5rem 0;
+    padding: 6rem 0 0;
     width: 75%;
 }
 
 .lastContainer div {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
     height: 92%;
-    padding: 7rem 5rem 0;
+    padding: 7rem 0rem 0;
     border: 3px solid #fff;
 }
 
 .lastContainer h1 {
+    width: 65%;
     border-bottom: 3px solid #fff;
     margin-bottom: 2rem;
     padding-bottom: 1.5rem;
@@ -1001,6 +1009,7 @@ div.opinion:nth-child(4) h3 {
 
 .lastContainer>div>h2,
 .lastContainer>div>p {
+    width: 65%;
     margin-bottom: 5rem;
 }
 
@@ -1016,9 +1025,48 @@ div.opinion:nth-child(4) h3 {
 
 .lastContainer>div :last-child {
     position: absolute;
-    bottom: 0.5%;
-    right: 3rem;
+    bottom: 0;
+    text-align: end;
     font-weight: 700;
+}
+
+@media (max-height: 320px) {
+    .menuContainer {
+        height: auto;
+    }
+}
+ 
+@media (min-width: 1300px) {
+    .aboutUsContainer h1 {
+        font-size: 40px;
+    }
+
+    .aboutUsContainer h2 {
+        font-size: 30px;
+    }
+
+    .aboutUsContainer p {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .aboutUsContainer {
+        padding-bottom: 1rem;
+    }
+
+    .opinion {
+        height: 600px;
+    }
+
+    .opinion>div {
+        width: 90%;
+    }
+
+    .lastContainer {
+        width: 90%;
+    }
 }
 
 @media (max-width: 840px) {
@@ -1311,7 +1359,7 @@ div.opinion:nth-child(4) h3 {
     }
 
     .opinion>div>span:last-child {
-        align-items: start;
+        align-items: flex-start;
     }
 
     .opinion>div>span:last-child h1 {
@@ -1419,12 +1467,11 @@ div.opinion:nth-child(4) h3 {
         flex-direction: column;
         align-items: center;
         padding-inline: 0;
-        padding: 103px 0;
+        padding: 103px 0 0;
         height: 100%;
     }
 
     .lastContainer div h1 {
-        width: 41%;
         text-align: center;
         font-size: 50px;
         margin-bottom: 64px;
@@ -1432,12 +1479,14 @@ div.opinion:nth-child(4) h3 {
     }
 
     .lastContainer div h2 {
-        width: 41%;
+        width: 55%;
         text-align: center;
         font-size: 35px;
     }
 
     .lastContainer p:first-of-type {
+        left: 0;
+        width: 125%;
         background: #25d366cc;
         font-size: 23px;
         padding: 1rem 20%;
@@ -1445,8 +1494,8 @@ div.opinion:nth-child(4) h3 {
     }
 
     .lastContainer p:last-of-type {
-        bottom: 116px;
-        left: 30%;
+        bottom: 70px;
+        text-align: start;
         margin: 0;
         font-size: 20px;
     }
@@ -1743,7 +1792,7 @@ div.opinion:nth-child(4) h3 {
     .opinion div {
         border: 3px solid;
         flex-direction: column;
-        align-items: start;
+        align-items: flex-start;
         padding: 2.5rem 1.7rem 2rem;
     }
 
@@ -1803,14 +1852,14 @@ div.opinion:nth-child(4) h3 {
     }
 
     .lastContainer div h1 {
-        width: 75%;
+        width: 90%;
         margin-inline: auto;
         font-size: 50px;
         text-align: start;
     }
 
     .lastContainer div h2 {
-        width: 75%;
+        width: 90%;
         margin-inline: auto;
         font-size: 35px;
         text-align: start;
@@ -1891,24 +1940,4 @@ div.opinion:nth-child(4) h3 {
         margin-left: 4px;
     }
 
-}
-
-@keyframes menuOpen {
-    0% {
-        top: -100vh !important;
-    }
-
-    100% {
-        top: 0vh !important;
-    }
-}
-
-@keyframes menuClose {
-    0% {
-        top: 0 !important;
-    }
-
-    100% {
-        top: -100vh !important;
-    }
 }
