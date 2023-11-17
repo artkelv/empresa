@@ -66,8 +66,8 @@ export default function LandingPage() {
             .catch(e => openAlert(e.response.data.message))
     }
 
+    // Quando expandir mais o site criar um componente só para o alert
     const openAlert = (message) => {
-        // Quando expandir mais o site criar um componente só para o alert
         setAlertMessage(message)
         setAlertToggle(true)
 
@@ -77,7 +77,6 @@ export default function LandingPage() {
     }
 
     const toggleMenu = () => {
-        console.log(menuEvent)
         switch (menuEvent) {
             case 'menuOpen':
                 setMenuEvent('menuClose')

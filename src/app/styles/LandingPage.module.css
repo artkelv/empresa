@@ -485,7 +485,7 @@ div.advantage:first-of-type {
 .servicesContainer {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 36px;
 }
 
@@ -1035,7 +1035,7 @@ div.opinion:nth-child(4) h3 {
         height: auto;
     }
 }
- 
+
 @media (min-width: 1300px) {
     .aboutUsContainer h1 {
         font-size: 40px;
@@ -1253,20 +1253,12 @@ div.opinion:nth-child(4) h3 {
     }
 
     .servicesContainer {
-        width: 100%;
-        display: flex;
-        flex-flow: wrap;
-        align-items: center;
-        justify-content: center;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
         gap: 35px 20px;
     }
 
-    .service {
-        width: 45%;
-        min-width: 160px;
-    }
-
     .newService {
+        grid-column: span 3;
         order: -1;
         margin-bottom: 94px;
         width: 100%;
@@ -1500,6 +1492,12 @@ div.opinion:nth-child(4) h3 {
         font-size: 20px;
     }
 
+}
+
+@media (max-width: 693px) {
+    .newService {
+        grid-column: span 2;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1938,6 +1936,24 @@ div.opinion:nth-child(4) h3 {
 
     .contactUsContainer>div>span:last-child p {
         margin-left: 4px;
+    }
+
+    @media (max-width: 419px) {
+        .newService {
+            grid-column: span 1;
+        }
+
+        .opinion>div {
+            padding: 25px;
+        }
+        
+        div.opinion:nth-child(4) div {
+            padding: 25px;
+        }
+
+        .mark {
+            margin-top: 10px;
+        }
     }
 
 }
