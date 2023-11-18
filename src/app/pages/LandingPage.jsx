@@ -44,18 +44,18 @@ export default function LandingPage() {
     })
 
     const services = [
-        { img: icon7, name: 'SITES COMERCIAIS', url: '' },
-        { img: icon19, name: 'Design de Páginas Web', url: '', new: true },
-        { img: icon8, name: 'LANDING PAGES', url: '' },
-        { img: icon9, name: 'SITES INSTITUCIONAIS', url: '' },
-        { img: icon10, name: 'E-COMMERCES', url: '' },
-        { img: icon11, name: 'BLOGS', url: '' },
-        { img: icon12, name: 'SITES ONE PAGE', url: '' },
-        { img: icon13, name: 'SITE EMPRESA', url: '' },
-        { img: icon14, name: 'PORTFÓLIOS', url: '' },
+        { img: icon7, name: 'SITES COMERCIAIS', new: false },
+        { img: icon19, name: 'Design de Páginas Web', new: true },
+        { img: icon8, name: 'LANDING PAGES', new: false },
+        { img: icon9, name: 'SITES INSTITUCIONAIS', new: false },
+        { img: icon10, name: 'E-COMMERCES', new: false },
+        { img: icon11, name: 'BLOGS', new: false },
+        { img: icon12, name: 'SITES ONE PAGE', new: false },
+        { img: icon13, name: 'SITE EMPRESA', new: false },
+        { img: icon14, name: 'PORTFÓLIOS', new: false },
     ]
 
-    const whatsappLink = "https://wa.me/61984977155"
+    const whatsappLink = `https://wa.me/${process.env.NEXT_PUBLIC_PHONE_NUMBER}`
 
     const sendEmail = () => {
         axios.post(`/api/email`, form)
@@ -66,7 +66,6 @@ export default function LandingPage() {
             .catch(e => openAlert(e.response.data.message))
     }
 
-    // Quando expandir mais o site criar um componente só para o alert
     const openAlert = (message) => {
         setAlertMessage(message)
         setAlertToggle(true)
@@ -90,13 +89,34 @@ export default function LandingPage() {
 
     return (
         <div className={styles.container}>
-            <div className={styles.img1Container}></div>
-            <div className={styles.alertContainer}
-                style={!alertToggle ? { display: "none" } : {}}
-            >
+            <div
+                className={styles.alertContainer}
+                style={!alertToggle ? { display: "none" } : {}}>
+
                 <p>{alertMessage}</p>
                 <button onClick={e => setAlertToggle(false)}>X</button>
             </div>
+
+            <div className={`${styles.menuContainer} ${styles[menuEvent]}`}>
+
+                <button onClick={toggleMenu}>
+                    <Image src={icon18} alt='' width="auto" height="auto" />
+                </button>
+
+                <ul>
+                    <li>
+                        <a onClick={toggleMenu} href="#seviços">SERVIÇOS</a>
+                    </li>
+                    <li>
+                        <a onClick={toggleMenu} href="#cases">CASES</a>
+                    </li>
+                    <li>
+                        <a onClick={toggleMenu} href="#contatos">CONTATO</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div className={styles.img1Container}></div>
             <div className={styles.headerContainer}>
                 <a className={styles.logo} href="">WEB TECH</a>
 
@@ -113,35 +133,16 @@ export default function LandingPage() {
                     <li>
                         <a href="#contatos">CONTATO</a>
                     </li>
-
                 </ul>
 
                 <span className={styles.phoneContainer}>
                     <Image src={icon1} alt='' width="auto" height="auto" />
-                    55 61 9 9466-2277
+                    {process.env.NEXT_PUBLIC_PHONE_NUMBER}
                 </span>
 
                 <button className={styles.menuButton} onClick={toggleMenu}>
                     <Image src={icon17} alt='' width="auto" height="auto" />
                 </button>
-            </div>
-
-            <div className={`${styles.menuContainer} ${styles[menuEvent]}`}>
-                <button onClick={toggleMenu}>
-                    <Image src={icon18} alt='' width="auto" height="auto" />
-                </button>
-
-                <ul>
-                    <li>
-                        <a onClick={toggleMenu} href="#seviços">SERVIÇOS</a>
-                    </li>
-                    <li>
-                        <a onClick={toggleMenu} href="#cases">CASES</a>
-                    </li>
-                    <li>
-                        <a onClick={toggleMenu} href="#contatos">CONTATO</a>
-                    </li>
-                </ul>
             </div>
 
             <span className={styles.headerBorder}></span>
@@ -160,7 +161,7 @@ export default function LandingPage() {
                 </div>
             </div>
 
-            <div className={styles.testeSection}>
+            <div className={styles.secondSection}>
                 <div className={`${styles.advantageContainer} animate__animated animate__fadeIn`}>
                     <span className={styles.advantageText}>
                         <h1>WEBTECH</h1>
@@ -169,7 +170,8 @@ export default function LandingPage() {
                             ao fim,iremos adorar construir uma parte da sua empresa.
                         </p>
                     </span>
-                    <div>
+
+                    <div className={styles.advantagesContent}>
                         <div className={styles.advantage}>
                             <Image src={icon3} alt='' width="auto" height="auto" />
                             <p>Profissionalismo</p>
@@ -210,7 +212,8 @@ export default function LandingPage() {
                     </div>
                 </div>
             </div>
-            <div className={styles.secondSection} >
+
+            <div className={styles.thirdSection} >
                 <div className={styles.imgContainer}>
                     <Image className={styles.img2} src={img2} alt='Imagem 2' width="auto" height="auto" />
 
@@ -224,7 +227,7 @@ export default function LandingPage() {
 
                 <div className={styles.whatWeDoContainer}>
                     <h1>O QUE FAZEMOS</h1>
-                    <span></span>
+                    <span className={styles.titleUnderline}></span>
 
                     <p>
                         Construimos sua aplicação, seja ela: site de vendas,
@@ -241,7 +244,8 @@ export default function LandingPage() {
                     <a href={whatsappLink} className={styles.buttonRippleEffect}>QUERO UM SITE!</a>
                 </div>
             </div>
-            <div className={styles.thirdSection} id='sobre'>
+
+            <div className={styles.fourthSection} id='sobre'>
                 <div className={styles.img3}></div>
 
                 <div className={styles.aboutUsContainer}>
@@ -276,9 +280,9 @@ export default function LandingPage() {
 
             <span className={styles.greenLine}></span>
 
-            <div className={styles.fourthSection} id='seviços'>
+            <div className={styles.fifthSection} id='seviços'>
                 <div className={styles.servicesHeader}>
-                    <div>
+                    <div className={styles.servicesHeaderContent}>
                         <h1>SERVIÇOS</h1>
                         <p>
                             Confira alguns serviços que ofertamos, dentre eles temos
@@ -286,6 +290,7 @@ export default function LandingPage() {
                             confira!.
                         </p>
                     </div>
+
                     <span>
                         CLIQUE NO CARD DESEJADO PARA SABER MAIS
                     </span>
@@ -295,11 +300,12 @@ export default function LandingPage() {
                     {
                         services.map(service => {
                             return (
-                                <div className={`${styles.service} ${service.new ? styles.newService : ''}`} key={service?.name}>
+                                <div
+                                    className={`${styles.service} ${service.new ? styles.newService : ''}`}
+                                    key={service?.name}>
                                     <span
                                         style={service.new ? { display: 'block' } : { display: 'none' }}
-                                        className={styles.new}
-                                    >
+                                        className={styles.newServiceTitle}>
                                         Novidade
                                     </span>
                                     <Image src={service?.img} alt='' width="auto" height="auto" />
@@ -313,8 +319,8 @@ export default function LandingPage() {
 
             <span className={styles.greenLine}></span>
 
-            <div className={styles.fifthSection} id='cases'>
-                <div className={styles.fifthSectionHeader}>
+            <div className={styles.sixthSection} id='cases'>
+                <div className={styles.sixthSectionHeader}>
                     <span>
                         <h1>CONFIRA ALGUNS DE NOSSOS </h1>
                         <h1>CASES</h1>
@@ -332,7 +338,7 @@ export default function LandingPage() {
 
                         <div>
                             <h1>LILIUM CASE</h1>
-                            <p>Empresa de Marketing</p>
+                            <p className={styles.companyType}>Empresa de Marketing</p>
                         </div>
 
                         <div className={styles.caseBtnContainer}>
@@ -340,12 +346,13 @@ export default function LandingPage() {
                             <button className={styles.buttonRippleEffect}>DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
+
                     <div className={styles.case}>
                         <Image src={img5} alt='Imagem 5' width="auto" height="auto" />
 
                         <div>
                             <h1>FRANCY SEGUROS</h1>
-                            <p>Empresa de Marketing</p>
+                            <p className={styles.companyType}>Empresa de Marketing</p>
                         </div>
 
                         <div className={styles.caseBtnContainer}>
@@ -353,12 +360,13 @@ export default function LandingPage() {
                             <button className={styles.buttonRippleEffect}>DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
+
                     <div className={styles.case}>
                         <Image src={img6} alt='Imagem 6' width="auto" height="auto" />
 
                         <div>
                             <h1>IPAM</h1>
-                            <p>Empresa de Marketing</p>
+                            <p className={styles.companyType}>Empresa de Marketing</p>
                         </div>
 
                         <div className={styles.caseBtnContainer}>
@@ -366,12 +374,13 @@ export default function LandingPage() {
                             <button className={styles.buttonRippleEffect}>DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
+
                     <div className={styles.case}>
                         <Image src={img7} alt='Imagem 7' width="auto" height="auto" />
 
                         <div>
                             <h1>CORPORALI</h1>
-                            <p>Clinica de Cirurgia Plástica</p>
+                            <p className={styles.companyType}>Clinica de Cirurgia Plástica</p>
                         </div>
 
                         <div className={styles.caseBtnContainer}>
@@ -381,7 +390,8 @@ export default function LandingPage() {
                     </div>
                 </div>
             </div>
-            <div className={styles.sixthSection}>
+
+            <div className={styles.seventhSection}>
                 <h1>
                     VENHA TRANSFORMAR A HISTÓRIA
                     DA SUA EMPRESA CONOSCO
@@ -394,9 +404,11 @@ export default function LandingPage() {
 
                 <a href={whatsappLink} className={styles.buttonRippleEffect}>FALE CONOSCO</a>
             </div>
+
             <div className={styles.opinionsContainer}>
                 <div className={styles.opinionHeader}>
                     <span className={styles.opinionHeaderLine}></span>
+
                     <div className={styles.opinionHeaderContent}>
                         <h1>OPINIÕES DE NOSSOS CLIENTES</h1>
 
@@ -405,19 +417,14 @@ export default function LandingPage() {
                             nossos trabalhos
                         </p>
                     </div>
+
                     <span className={styles.opinionHeaderLine}></span>
                 </div>
 
                 <div className={styles.opinion}>
-                    <div>
+                    <div className={styles.opinionContent}>
                         <span>
                             <p>
-                                {/* Nossa empresa está profundamente grata à WEBTECH por criar uma aplicação que
-                                revolucionou a maneira como fazemos negócios. Sua expertise técnica e dedicação à
-                                excelência são evidentes em cada aspecto deste projeto. Agora, estamos mais eficientes e
-                                conectados do que nunca, e devemos isso a vocês. Obrigado por serem os mestres por trás do
-                                nosso sucesso digital. */}
-
                                 A WEBTECH foi fundamental na criação de nossa aplicação personalizada.
                                 Sua equipe demonstrou profissionalismo, criatividade e compromisso em
                                 atender às nossas necessidades. Graças a vocês, temos agora uma
@@ -438,14 +445,9 @@ export default function LandingPage() {
                 <span className={styles.greenLine}></span>
 
                 <div className={styles.opinion}>
-                    <div>
+                    <div className={styles.opinionContent}>
                         <span>
                             <p>
-                                {/* A WEBTECH foi fundamental na criação de nossa aplicação personalizada. Sua
-                                equipe demonstrou profissionalismo, criatividade e compromisso em atender às nossas
-                                necessidades. Graças a vocês, temos agora uma ferramenta digital de ponta que nos diferencia
-                                da concorrência. Estamos imensamente agradecidos pelo seu trabalho excepcional. */}
-
                                 Nossa empresa está profundamente grata à WEBTECH por criar uma aplicação que revolucionou a maneira como fazemos negócios.
                                 Sua expertise técnica e dedicação à excelência são evidentes em cada aspecto deste projeto.
                                 Agora, estamos mais eficientes e conectados do que nunca, e devemos isso a vocês.
@@ -466,7 +468,7 @@ export default function LandingPage() {
                 <span className={styles.greenLine}></span>
 
                 <div className={styles.opinion}>
-                    <div>
+                    <div className={styles.opinionContent}>
                         <span>
                             <p>
                                 Queremos expressar nossa sincera gratidão à equipe da WEBTECH por criar uma
@@ -486,7 +488,8 @@ export default function LandingPage() {
                     </div>
                 </div>
             </div>
-            <div className={styles.seventhSection}>
+
+            <div className={styles.eighthSection}>
                 <div>
                     <h1>GOSTOU DO QUE VIU?</h1>
                     <p>
@@ -494,10 +497,12 @@ export default function LandingPage() {
                         um excelente trabalho para a sua empresa!
                     </p>
                 </div>
+
                 <a href={whatsappLink}>Falar conosco</a>
             </div>
+
             <div className={styles.contactUsContainer} id='contatos'>
-                <div>
+                <div className={styles.contactUsContent}>
                     <h1>CONTATE-NOS</h1>
 
                     <span className={styles.formTextContainer}>
@@ -507,6 +512,7 @@ export default function LandingPage() {
                             aplicação de sucesso.
                         </p>
                     </span>
+
                     <form className={styles.form}>
                         <input type="text"
                             name="name"
@@ -546,8 +552,9 @@ export default function LandingPage() {
                         <p className={styles.mark}>WEB-TECH.</p>
                     </span>
                 </div>
+
                 <div className={styles.lastContainer}>
-                    <div>
+                    <div className={styles.lastContainerContent}>
                         <h1>WEB-TECH</h1>
 
                         <h2>

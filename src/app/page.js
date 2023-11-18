@@ -1,27 +1,13 @@
-import icon2 from '../../public/icons/icon_2.svg'
-import instagram_icon from '../../public/icons/instagram_icon.png'
-
-import styles from './styles/page.module.css'
 import LandingPage from './pages/LandingPage'
-import Image from 'next/image'
+import FixedLinks from './components/FixedLinks'
 
 import 'animate.css'
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <main>
       <LandingPage />
-
-      <div className={`${styles.fixedLinks} animate__animated animate__fadeIn`}>
-        <a href="https://wa.me/61984977155">
-          <Image src={icon2} alt='' width={0} height={0} />
-        </a>
-
-        <a href="http://instagram.com">
-          <Image src={instagram_icon} alt='' width={0} height={0} />
-        </a>
-      </div>
-      
+      <FixedLinks />
     </main>
   )
 }

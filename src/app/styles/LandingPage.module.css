@@ -34,14 +34,7 @@ a.buttonRippleEffect {
     color: #fff;
 }
 
-.img1Container {
-    position: absolute;
-    width: 100%;
-    height: 8%;
-    background-image: linear-gradient(#001c31b1, #001c31b1), url('../../../public/assets/foto_1.jpg');
-    background-size: cover;
-}
-
+/* Alert de mesagens */
 .alertContainer {
     display: flex;
     align-items: center;
@@ -61,6 +54,66 @@ a.buttonRippleEffect {
     padding: 10px;
     margin-left: 2rem;
 }
+
+/* Menu para celular */
+.menuContainer {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    top: -200vh;
+    background-color: #001C31;
+    height: 100vh;
+    padding: 3rem 2rem;
+}
+
+.menuContainer button {
+    margin-bottom: 5em;
+    font-size: 25px;
+    padding: 0;
+    text-align: center;
+}
+
+.menuContainer img {
+    width: 50px;
+    height: 50px;
+}
+
+.menuContainer ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menuContainer li {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    width: 70%;
+    text-align: center;
+}
+
+.menuContainer li:hover {
+    background-color: #ffffff7b;
+}
+
+.menuOpen {
+    top: 0 !important;
+    transition: 0.5s ease-in-out;
+}
+
+.menuClose {
+    top: -200vh;
+    transition: 0.5s ease-out;
+}
+
+.img1Container {
+    position: absolute;
+    width: 100%;
+    height: 8%;
+    background-image: linear-gradient(#001c31b1, #001c31b1), url('../../../public/assets/foto_1.jpg');
+    background-size: cover;
+}
+
+
 
 .headerContainer,
 .firstSection,
@@ -116,55 +169,6 @@ a.buttonRippleEffect {
 .menuButton img {
     width: 60px;
     height: 60px;
-}
-
-.menuContainer {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    top: -200vh;
-    background-color: #001C31;
-    height: 100vh;
-    padding: 3rem 2rem;
-}
-
-.menuContainer button {
-    margin-bottom: 5em;
-    font-size: 25px;
-    padding: 0;
-    text-align: center;
-}
-
-.menuContainer img {
-    width: 50px;
-    height: 50px;
-}
-
-.menuContainer ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.menuContainer li {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    width: 70%;
-    text-align: center;
-}
-
-.menuContainer li:hover {
-    background-color: #ffffff7b;
-}
-
-.menuOpen {
-    top: 0 !important;
-    transition: 0.5s ease-in-out;
-}
-
-.menuClose {
-    top: -200vh;
-    transition: 0.5s ease-out;
 }
 
 .headerBorder {
@@ -240,7 +244,7 @@ a.buttonRippleEffect {
     color: #000;
 }
 
-.testeSection {
+.secondSection {
     width: 100%;
     display: flex;
     align-items: center;
@@ -259,7 +263,7 @@ a.buttonRippleEffect {
     display: none;
 }
 
-.advantageContainer>div {
+.advantagesContent {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
     gap: 1rem;
@@ -294,7 +298,7 @@ div.advantage:first-of-type {
     font-weight: 300;
 }
 
-.secondSection {
+.thirdSection {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -364,7 +368,7 @@ div.advantage:first-of-type {
     color: #23c963;
 }
 
-.whatWeDoContainer span {
+.whatWeDoContainer>.titleUnderline {
     height: 3px;
     width: 23%;
     margin: 0 0 5rem;
@@ -393,13 +397,13 @@ div.advantage:first-of-type {
     border-radius: 5px;
 }
 
-.thirdSection {
+.fourthSection {
     position: relative;
     margin-bottom: 4rem;
     background-color: #002642;
 }
 
-.thirdSection .img3 {
+.fourthSection .img3 {
     flex: 1;
     width: 50%;
     height: 785px;
@@ -447,7 +451,7 @@ div.advantage:first-of-type {
     margin: auto;
 }
 
-.fourthSection {
+.fifthSection {
     margin: 7rem auto;
     display: flex;
     flex-direction: column;
@@ -463,7 +467,7 @@ div.advantage:first-of-type {
     align-items: center;
 }
 
-.servicesHeader div {
+.servicesHeaderContent {
     width: 50%;
 }
 
@@ -511,7 +515,7 @@ div.advantage:first-of-type {
     font-weight: 700;
 }
 
-.new {
+.newServiceTitle {
     position: absolute;
     background-color: #25D366;
     width: 60%;
@@ -521,38 +525,37 @@ div.advantage:first-of-type {
     top: -20px;
 }
 
-
 .newService {
     grid-column: span 2;
 }
 
-.fifthSection {
+.sixthSection {
     margin: 7rem 0 10rem;
 }
 
-.fifthSectionHeader {
+.sixthSectionHeader {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 5rem;
 }
 
-.fifthSectionHeader span {
+.sixthSectionHeader span {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.fifthSectionHeader h1 {
+.sixthSectionHeader h1 {
     font-size: 35px;
     margin-bottom: 2rem;
     display: inline;
 }
 
-.fifthSectionHeader span :last-child {
+.sixthSectionHeader span :last-child {
     color: #25d366;
 }
 
-.fifthSectionHeader p {
+.sixthSectionHeader p {
     text-align: center;
     width: 52%;
     color: #CACACA;
@@ -598,12 +601,12 @@ div.advantage:first-of-type {
 }
 
 .case:first-child>h1,
-.case:first-child>p {
+.companyType {
     text-align: start;
     margin: 0;
 }
 
-.case:first-child>p {
+.companyType {
     color: #25d366;
 }
 
@@ -650,7 +653,7 @@ div.advantage:first-of-type {
     background-color: #0000005b;
 }
 
-.sixthSection {
+.seventhSection {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -662,7 +665,7 @@ div.advantage:first-of-type {
     height: 624px;
 }
 
-.sixthSection h1 {
+.seventhSection h1 {
     color: #25d366;
     text-align: center;
     width: 49%;
@@ -670,7 +673,7 @@ div.advantage:first-of-type {
     margin-bottom: 2rem;
 }
 
-.sixthSection p {
+.seventhSection p {
     width: 39%;
     text-align: center;
     color: #CACACA;
@@ -678,7 +681,7 @@ div.advantage:first-of-type {
     font-weight: 700;
 }
 
-.sixthSection a {
+.seventhSection a {
     border-radius: 5px;
     background-color: #25d366;
     padding: 1.5rem 3.7rem;
@@ -687,11 +690,11 @@ div.advantage:first-of-type {
     text-align: center;
 }
 
-.sixthSection a:hover {
+.seventhSection a:hover {
     background-color: #17843f;
 }
 
-.sixthSection a::after {
+.seventhSection a::after {
     border-radius: 5px;
 }
 
@@ -756,7 +759,7 @@ div.opinion:nth-child(6) {
     background-size: cover;
 }
 
-.opinion>div {
+.opinionContent {
     position: absolute;
     border: 3px solid #fff;
     display: flex;
@@ -767,19 +770,19 @@ div.opinion:nth-child(6) {
     padding: 5%;
 }
 
-.opinion>div>span {
+.opinionContent>span {
     width: 60%;
     height: 100%;
 }
 
-.opinion>div>span>p {
+.opinionContent>span>p {
     width: 100%;
     height: 90%;
     font-size: 20px;
     text-align: justify;
 }
 
-.opinion>div>span:last-child {
+.opinionContent>span:last-child {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -817,7 +820,7 @@ div.opinion:nth-child(4) h3 {
     width: 50%;
 }
 
-.seventhSection {
+.eighthSection {
     display: flex;
     align-items: center;
     border-block: 3px solid #fff;
@@ -827,18 +830,18 @@ div.opinion:nth-child(4) h3 {
     margin-inline: auto;
 }
 
-.seventhSection h1 {
+.eighthSection h1 {
     font-size: 30px;
 }
 
-.seventhSection p {
+.eighthSection p {
     color: #25D366;
     margin: 2rem 0;
     font-size: 25px;
     width: 70%;
 }
 
-.seventhSection a {
+.eighthSection a {
     text-align: center;
     border: 3px solid #25D366;
     color: #fff;
@@ -858,11 +861,11 @@ div.opinion:nth-child(4) h3 {
     position: relative;
 }
 
-.contactUsContainer>div:first-child {
+.contactUsContent {
     padding-bottom: 2rem;
 }
 
-.contactUsContainer>div>h1 {
+.contactUsContent>h1 {
     border-left: 3px solid #fff;
     padding-left: 1rem;
     font-size: 40px;
@@ -960,7 +963,6 @@ div.opinion:nth-child(4) h3 {
     width: 146px;
 }
 
-
 .contactUsContainer>div>span:last-child {
     font-size: 12px;
     padding-left: 5rem;
@@ -987,7 +989,7 @@ div.opinion:nth-child(4) h3 {
     width: 75%;
 }
 
-.lastContainer div {
+.lastContainerContent {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -998,7 +1000,7 @@ div.opinion:nth-child(4) h3 {
     border: 3px solid #fff;
 }
 
-.lastContainer h1 {
+.lastContainerContent h1 {
     width: 65%;
     border-bottom: 3px solid #fff;
     margin-bottom: 2rem;
@@ -1007,13 +1009,13 @@ div.opinion:nth-child(4) h3 {
     font-size: 40px;
 }
 
-.lastContainer>div>h2,
-.lastContainer>div>p {
+.lastContainerContent>h2,
+.lastContainerContent>p {
     width: 65%;
     margin-bottom: 5rem;
 }
 
-.lastContainer h2 {
+.lastContainerContent h2 {
     width: 90%;
     font-size: 28px;
 }
@@ -1023,7 +1025,7 @@ div.opinion:nth-child(4) h3 {
     font-size: 16px;
 }
 
-.lastContainer>div :last-child {
+.lastContainerContent :last-child {
     position: absolute;
     bottom: 0;
     text-align: end;
@@ -1060,7 +1062,7 @@ div.opinion:nth-child(4) h3 {
         height: 600px;
     }
 
-    .opinion>div {
+    .opinionContent {
         width: 90%;
     }
 
@@ -1128,7 +1130,7 @@ div.opinion:nth-child(4) h3 {
         border-radius: 40px;
     }
 
-    .testeSection {
+    .secondSection {
         margin-top: 40px;
     }
 
@@ -1172,7 +1174,7 @@ div.opinion:nth-child(4) h3 {
         width: 83%;
     }
 
-    .secondSection {
+    .thirdSection {
         flex-direction: column;
         align-items: center;
         padding-inline: 0;
@@ -1220,7 +1222,7 @@ div.opinion:nth-child(4) h3 {
         justify-content: center;
     }
 
-    .thirdSection {
+    .fourthSection {
         display: none;
     }
 
@@ -1264,17 +1266,17 @@ div.opinion:nth-child(4) h3 {
         width: 100%;
     }
 
-    .fifthSectionHeader>span {
+    .sixthSectionHeader>span {
         display: flex;
         flex-direction: column;
         margin-bottom: 62px;
     }
 
-    .fifthSectionHeader h1 {
+    .sixthSectionHeader h1 {
         margin: 0;
     }
 
-    .fifthSectionHeader p {
+    .sixthSectionHeader p {
         width: 60%;
         font-size: 20px;
     }
@@ -1302,22 +1304,22 @@ div.opinion:nth-child(4) h3 {
         padding: 0 !important;
     }
 
-    .sixthSection {
+    .seventhSection {
         height: 466px;
     }
 
-    .sixthSection h1 {
+    .seventhSection h1 {
         font-size: 30px;
         width: 90%;
     }
 
-    .sixthSection p {
+    .seventhSection p {
         font-size: 20px;
         width: 90%;
         margin: 40px 0 60px;
     }
 
-    .sixthSection a {
+    .seventhSection a {
         width: 60%;
     }
 
@@ -1329,7 +1331,7 @@ div.opinion:nth-child(4) h3 {
         height: 454px;
     }
 
-    .opinion div {
+    .opinionContent {
         width: 90%;
         height: 85%;
         margin: 0;
@@ -1338,11 +1340,11 @@ div.opinion:nth-child(4) h3 {
         justify-content: space-between;
     }
 
-    .opinion>div>span {
+    .opinionContent>span {
         width: 95%;
     }
 
-    .opinion>div>span>p {
+    .opinionContent>span>p {
         width: 100%;
     }
 
@@ -1350,11 +1352,11 @@ div.opinion:nth-child(4) h3 {
         display: none;
     }
 
-    .opinion>div>span:last-child {
+    .opinionContent>span:last-child {
         align-items: flex-start;
     }
 
-    .opinion>div>span:last-child h1 {
+    .opinionContent>span:last-child h1 {
         font-size: 25px;
         margin-bottom: 5px;
     }
@@ -1373,16 +1375,16 @@ div.opinion:nth-child(4) h3 {
         width: 70%;
     }
 
-    .seventhSection {
+    .eighthSection {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .seventhSection p {
+    .eighthSection p {
         width: 100%;
     }
 
-    .seventhSection a {
+    .eighthSection a {
         width: 40%;
     }
 
@@ -1390,11 +1392,11 @@ div.opinion:nth-child(4) h3 {
         flex-direction: column-reverse;
     }
 
-    .contactUsContainer>div:first-child {
+    .contactUsContent:first-child {
         padding-bottom: 0;
     }
 
-    .contactUsContainer>div>h1 {
+    .contactUsContent>h1 {
         text-align: center;
         border: none;
         padding: 0;
@@ -1433,7 +1435,7 @@ div.opinion:nth-child(4) h3 {
         display: none;
     }
 
-    .contactUsContainer>div>span:last-child {
+    .contactUsContent>span:last-child {
         display: flex;
         justify-content: center;
         background-color: #252525;
@@ -1453,7 +1455,7 @@ div.opinion:nth-child(4) h3 {
         background-position: center;
     }
 
-    .lastContainer div {
+    .lastContainerContent {
         border: none;
         display: flex;
         flex-direction: column;
@@ -1463,20 +1465,20 @@ div.opinion:nth-child(4) h3 {
         height: 100%;
     }
 
-    .lastContainer div h1 {
+    .lastContainerContent h1 {
         text-align: center;
         font-size: 50px;
         margin-bottom: 64px;
         padding-bottom: 30px;
     }
 
-    .lastContainer div h2 {
+    .lastContainerContent h2 {
         width: 55%;
         text-align: center;
         font-size: 35px;
     }
 
-    .lastContainer p:first-of-type {
+    .lastContainerContent p:first-of-type {
         left: 0;
         width: 125%;
         background: #25d366cc;
@@ -1485,7 +1487,7 @@ div.opinion:nth-child(4) h3 {
         text-align: center;
     }
 
-    .lastContainer p:last-of-type {
+    .lastContainerContent p:last-of-type {
         bottom: 70px;
         text-align: start;
         margin: 0;
@@ -1497,6 +1499,14 @@ div.opinion:nth-child(4) h3 {
 @media (max-width: 693px) {
     .newService {
         grid-column: span 2;
+    }
+
+    .formTextContainer{
+        width: 90%;
+    }
+
+    .formTextContainer p{
+        padding-right: 50px;
     }
 }
 
@@ -1548,7 +1558,7 @@ div.opinion:nth-child(4) h3 {
         margin-block: 3.5rem;
     }
 
-    .testeSection {
+    .secondSection {
         margin-top: 110px;
     }
 
@@ -1583,7 +1593,7 @@ div.opinion:nth-child(4) h3 {
         margin-inline: auto;
     }
 
-    .secondSection {
+    .thirdSection {
         margin-bottom: 4rem;
     }
 
@@ -1638,12 +1648,11 @@ div.opinion:nth-child(4) h3 {
         text-align: center;
     }
 
-
     .greenLine {
         width: 81%;
     }
 
-    .fourthSection {
+    .fifthSection {
         width: 81%;
         margin-block: 3.5rem 4rem;
     }
@@ -1670,17 +1679,17 @@ div.opinion:nth-child(4) h3 {
         justify-content: center;
     }
 
-    .fifthSection {
+    .sixthSection {
         width: 80%;
         margin-inline: auto;
         margin: 3.5rem auto 6rem;
     }
 
-    .fifthSectionHeader {
+    .sixthSectionHeader {
         width: 100%;
     }
 
-    .fifthSectionHeader p {
+    .sixthSectionHeader p {
         width: 100%;
     }
 
@@ -1717,20 +1726,20 @@ div.opinion:nth-child(4) h3 {
         padding: 0.9rem 0;
     }
 
-    .sixthSection {
+    .seventhSection {
         background-size: cover;
         background-position: center;
         height: 482px;
         margin-bottom: 4rem;
     }
 
-    .sixthSection h1,
-    .sixthSection p {
+    .seventhSection h1,
+    .seventhSection p {
         width: 93%;
         text-align: center;
     }
 
-    .sixthSection a {
+    .seventhSection a {
         width: 63%;
     }
 
@@ -1787,23 +1796,23 @@ div.opinion:nth-child(4) h3 {
     }
 
     div.opinion:nth-child(4) div,
-    .opinion div {
+    .opinionContent {
         border: 3px solid;
         flex-direction: column;
         align-items: flex-start;
         padding: 2.5rem 1.7rem 2rem;
     }
 
-    .opinion>div>span {
+    .opinionContent>span {
         width: 100%;
     }
 
-    .opinion div span>p {
+    .opinionContent span>p {
         font-size: 15px;
     }
 
-    .opinion span h1,
-    .opinion span h3 {
+    .opinionContent span h1,
+    .opinionContent span h3 {
         font-size: 20px;
     }
 
@@ -1812,7 +1821,7 @@ div.opinion:nth-child(4) h3 {
         width: 71%;
     }
 
-    .seventhSection {
+    .eighthSection {
         border-block: 3px solid #fff;
         width: 78%;
         padding: 2.5rem 1rem;
@@ -1820,17 +1829,17 @@ div.opinion:nth-child(4) h3 {
         margin-inline: auto;
     }
 
-    .seventhSection h1 {
+    .eighthSection h1 {
         font-size: 25px;
     }
 
-    .seventhSection p {
+    .eighthSection p {
         color: #25D366;
         margin: 27px 0;
         font-size: 20px;
     }
 
-    .seventhSection a {
+    .eighthSection a {
         text-align: center;
         border: 3px solid #25D366;
         color: #fff;
@@ -1845,32 +1854,32 @@ div.opinion:nth-child(4) h3 {
         height: 754px;
     }
 
-    .lastContainer div {
+    .lastContainerContent {
         padding: 0;
     }
 
-    .lastContainer div h1 {
+    .lastContainerContent h1 {
         width: 90%;
         margin-inline: auto;
         font-size: 50px;
         text-align: start;
     }
 
-    .lastContainer div h2 {
+    .lastContainerContent h2 {
         width: 90%;
         margin-inline: auto;
         font-size: 35px;
         text-align: start;
     }
 
-    .lastContainer p:first-of-type {
+    .lastContainerContent p:first-of-type {
         background: #25d366cc;
         font-size: 18px;
         padding: 1rem 3.5rem;
         text-align: start;
     }
 
-    .lastContainer p:last-of-type {
+    .lastContainerContent p:last-of-type {
         bottom: 0;
         font-size: 20px;
         text-align: end;
@@ -1880,11 +1889,11 @@ div.opinion:nth-child(4) h3 {
         border: 0;
     }
 
-    .contactUsContainer>div:first-child {
+    .contactUsContent:first-child {
         padding-bottom: 0;
     }
 
-    .contactUsContainer>div>h1 {
+    .contactUsContent>h1 {
         border: none;
         font-size: 30px;
         text-align: center;
@@ -1927,14 +1936,14 @@ div.opinion:nth-child(4) h3 {
         display: none;
     }
 
-    .contactUsContainer>div>span:last-child {
+    .contactUsContent>span:last-child {
         display: flex;
         justify-content: center;
         flex-flow: wrap;
         padding-block: 34px;
     }
 
-    .contactUsContainer>div>span:last-child p {
+    .contactUsContent>span:last-child p {
         margin-left: 4px;
     }
 
@@ -1943,10 +1952,10 @@ div.opinion:nth-child(4) h3 {
             grid-column: span 1;
         }
 
-        .opinion>div {
+        .opinionContent {
             padding: 25px;
         }
-        
+
         div.opinion:nth-child(4) div {
             padding: 25px;
         }
