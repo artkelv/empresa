@@ -156,8 +156,8 @@ export default function LandingPage() {
                 </div>
 
                 <div className={styles.firstSectionButtons}>
-                    <a href="#contatos" className={styles.buttonRippleEffect}>QUERO UM SITE</a>
-                    <a href={whatsappLink} className={styles.buttonRippleEffect}>FALAR COM ATENDENTE</a>
+                    <a href="#contatos" target='_blank' className={styles.buttonRippleEffect}>QUERO UM SITE</a>
+                    <a href={whatsappLink} target='_blank' className={styles.buttonRippleEffect}>FALAR COM ATENDENTE</a>
                 </div>
             </div>
 
@@ -241,7 +241,7 @@ export default function LandingPage() {
                         nesta nova fase.
                     </p>
 
-                    <a href={whatsappLink} className={styles.buttonRippleEffect}>QUERO UM SITE!</a>
+                    <a href={whatsappLink} target='_blank' className={styles.buttonRippleEffect}>QUERO UM SITE!</a>
                 </div>
             </div>
 
@@ -342,7 +342,7 @@ export default function LandingPage() {
                         </div>
 
                         <div className={styles.caseBtnContainer}>
-                            <a href="https://ludicsrous-receipt.surge.sh/" className={styles.buttonRippleEffect}>VISUALIZAR CASE</a>
+                            <a href="https://ludicsrous-receipt.surge.sh/" target='_blank' className={styles.buttonRippleEffect}>VISUALIZAR CASE</a>
                             <button className={styles.buttonRippleEffect}>DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
@@ -356,7 +356,7 @@ export default function LandingPage() {
                         </div>
 
                         <div className={styles.caseBtnContainer}>
-                            <a href="https://necessary-rake.surge.sh/" className={styles.buttonRippleEffect}>VISUALIZAR CASE</a>
+                            <a href="https://necessary-rake.surge.sh/" target='_blank' className={styles.buttonRippleEffect}>VISUALIZAR CASE</a>
                             <button className={styles.buttonRippleEffect}>DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
@@ -370,7 +370,7 @@ export default function LandingPage() {
                         </div>
 
                         <div className={styles.caseBtnContainer}>
-                            <a href="https://fumblisng-celery.surge.sh/" className={styles.buttonRippleEffect}>VISUALIZAR CASE</a>
+                            <a href="https://fumblisng-celery.surge.sh/" target='_blank' className={styles.buttonRippleEffect}>VISUALIZAR CASE</a>
                             <button className={styles.buttonRippleEffect}>DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
@@ -384,7 +384,7 @@ export default function LandingPage() {
                         </div>
 
                         <div className={styles.caseBtnContainer}>
-                            <a href="https://corporali-2b182ygyu-artkelv.vercel.app/" className={styles.buttonRippleEffect}>VISUALIZAR CASE</a>
+                            <a href="https://corporali-2b182ygyu-artkelv.vercel.app/" target='_blank' className={styles.buttonRippleEffect}>VISUALIZAR CASE</a>
                             <button className={styles.buttonRippleEffect}>DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
@@ -402,7 +402,7 @@ export default function LandingPage() {
                     criar algo sensacional.
                 </p>
 
-                <a href={whatsappLink} className={styles.buttonRippleEffect}>FALE CONOSCO</a>
+                <a href={whatsappLink} target='_blank' className={styles.buttonRippleEffect}>FALE CONOSCO</a>
             </div>
 
             <div className={styles.opinionsContainer}>
@@ -498,7 +498,7 @@ export default function LandingPage() {
                     </p>
                 </div>
 
-                <a href={whatsappLink}>Falar conosco</a>
+                <a href={whatsappLink} target='_blank'>Falar conosco</a>
             </div>
 
             <div className={styles.contactUsContainer} id='contatos'>
