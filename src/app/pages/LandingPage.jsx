@@ -156,7 +156,7 @@ export default function LandingPage() {
                 </div>
 
                 <div className={styles.firstSectionButtons}>
-                    <a href="#contatos" target='_blank' className={styles.buttonRippleEffect}>QUERO UM SITE</a>
+                    <a href="#contatos" className={styles.buttonRippleEffect}>QUERO UM SITE</a>
                     <a href={whatsappLink} target='_blank' className={styles.buttonRippleEffect}>FALAR COM ATENDENTE</a>
                 </div>
             </div>

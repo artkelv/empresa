@@ -7,11 +7,11 @@ import styles from '../styles/fixedLinks.module.css'
 const FixedLinks = () => {
     return (
         <div className={`${styles.fixedLinks} animate__animated animate__fadeIn`}>
-            <a href="https://wa.me/61984977155">
+            <a href="https://wa.me/61984977155" target='_blank'>
                 <Image src={icon2} alt='' width={0} height={0} />
             </a>
 
-            <a href="http://instagram.com">
+            <a href="http://instagram.com" target='_blank'>
                 <Image src={instagram_icon} alt='' width={0} height={0} />
             </a>
         </div>
