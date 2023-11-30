@@ -1,0 +1,160 @@
+.buttonRippleEffect {
+    position: relative;
+    background-position: center;
+    transition: 0.5s;
+}
+
+.buttonRippleEffect:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.8s;
+    border-radius: 5px;
+}
+
+.buttonRippleEffect:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 0.4;
+    transition: 0s
+}
+
+.modalComponent {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    background-color: #00000052;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+}
+
+.modalBody {
+    position: fixed;
+    background-color: #387D3D;
+    width: 35%;
+    top: 25%;
+}
+
+.head {
+    background-color: #387D3D;
+    width: 100%;
+    padding: 30px 40px;
+}
+
+.head h1 {
+    border-left: 2px solid #fff;
+    font-size: 20px !important;
+    color: #fff;
+    padding-left: 10px ;
+}
+
+.content {
+    padding: 40px;
+    background-color: #fff;
+    color: #000;
+}
+
+.footer {
+    display: flex;
+    margin-top: 30px;
+    background-color: #387D3D;
+    padding: 40px;
+}
+
+.footer button,
+.footer a {
+    border-radius: 5px;
+    padding: 10px 30px;
+    text-align: center;
+}
+
+.footer :first-child {
+    border: 1px solid #fff;
+    color: #fff;
+    margin-right: 30px;
+    transition: 0.3s;
+}
+
+.footer :first-child:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.footer :first-child:after {
+    background-color: #00000078;
+}
+
+.footer :nth-child(2) {
+    background-color: #25D366;
+    color: #fff;
+}
+
+.footer :nth-child(2):hover {
+    background-color: #25d3658e;
+    color: #fff;
+}
+
+.footer :nth-child(2):after {
+    background: #f1f1f1;
+}
+
+@media (max-width: 1000px) {
+    .modalBody {
+        width: 50%;
+    }
+
+    .footer {
+        justify-content: flex-start;
+    }
+
+    .footer button,
+    .footer a {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 690px) {
+    .modalBody {
+        width: 70%;
+    }
+
+    .head {
+        padding: 20px 20px;
+    }
+
+    .content {
+        padding: 30px 20px;
+    }
+
+    .footer {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .modalBody {
+        width: 90%;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer :first-child {
+        margin: 10px 0;
+    }
+
+    .footer button,
+    .footer a {
+        width: 100%;
+        padding: 10px 0;
+    }
+}

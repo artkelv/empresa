@@ -1,0 +1,147 @@
+.buttonRippleEffect {
+    position: relative;
+    background-position: center;
+    transition: 0.5s;
+}
+
+.buttonRippleEffect:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.8s;
+    border-radius: 10px;
+}
+
+.buttonRippleEffect:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 0.4;
+    transition: 0s
+}
+
+.modalComponent {
+    position: absolute;
+    background-color: #00000052;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.modalBody {
+    position: fixed;
+    background-color: #fff;
+    color: #000;
+    width: 50%;
+    top: 25%;
+}
+
+.head {
+    background-color: #1064B2;
+    width: 100%;
+    padding: 15px 40px;
+}
+
+.head h1 {
+    font-size: 20px;
+    color: #fff;
+}
+
+.content {
+    padding: 40px;
+}
+
+.btns {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+.btns button, 
+.btns a {
+    border-radius: 10px;
+    padding: 10px 50px;
+    text-align: center;
+}
+
+.btns :first-child {
+    border: 1px solid #1064B2;
+    color: #1064B2;
+    margin-right: 30px;
+}
+
+.btns :first-child:hover {
+    background-color: #1064B2;
+    color: #fff;
+}
+
+.btns :first-child:after {
+    background-color: #ffffff92;
+}
+
+.btns :nth-child(2) {
+    background-color: #1064B2;
+    color: #fff;
+}
+
+.btns :nth-child(2):hover {
+    background-color: #0a3b6a
+}
+
+.btns :nth-child(2):after {
+    background: #f1f1f1;
+}
+
+@media (max-width: 900px) {
+    .modalBody {
+        width: 65%;
+    }
+
+    .btns {
+        justify-content: flex-start;
+    }
+
+    .btns button,
+    .btns a {
+        padding: 10px 30px;
+    }
+}
+
+@media (max-width: 570px) {
+    .modalBody {
+        width: 90%;
+        top: 15%;
+    }
+
+    .head {
+        padding: 15px 20px;
+    }
+
+    .content {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .btns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btns :first-child {
+        margin: 10px 0;
+    }
+
+    .btns button,
+    .btns a {
+        width: 100%;
+        padding: 10px 0;
+    }
+}

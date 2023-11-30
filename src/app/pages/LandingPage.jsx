@@ -24,10 +24,15 @@ import img5 from '../../../public/assets/foto_5.png'
 import img6 from '../../../public/assets/foto_6.png'
 import img7 from '../../../public/assets/foto_7.png'
 
+import CaseModal from '../components/CaseModal';
+import ServiceModal from '../components/ServiceModal';
+
 import Image from 'next/image'
-import styles from '../styles/LandingPage.module.css'
+import styles from '../styles/landingPage.module.css'
 import axios from 'axios';
-import { useState } from 'react';
+
+import { useContext, useState } from 'react';
+import { ModalContext } from '../contexts/ModalContext';
 
 import 'animate.css'
 
@@ -43,19 +48,31 @@ export default function LandingPage() {
         message: ''
     })
 
+    const { isOpen, type, openModal } = useContext(ModalContext)
+
     const services = [
-        { img: icon7, name: 'SITES COMERCIAIS', new: false },
-        { img: icon19, name: 'Design de Páginas Web', new: true },
-        { img: icon8, name: 'LANDING PAGES', new: false },
-        { img: icon9, name: 'SITES INSTITUCIONAIS', new: false },
-        { img: icon10, name: 'E-COMMERCES', new: false },
-        { img: icon11, name: 'BLOGS', new: false },
-        { img: icon12, name: 'SITES ONE PAGE', new: false },
-        { img: icon13, name: 'SITE EMPRESA', new: false },
-        { img: icon14, name: 'PORTFÓLIOS', new: false },
+        { id: 0, img: icon7, name: 'SITES COMERCIAIS', new: false },
+        { id: 1, img: icon19, name: 'Design de Páginas Web', new: true },
+        { id: 2, img: icon8, name: 'LANDING PAGES', new: false },
+        { id: 3, img: icon9, name: 'SITES INSTITUCIONAIS', new: false },
+        { id: 4, img: icon10, name: 'E-COMMERCES', new: false },
+        { id: 5, img: icon11, name: 'BLOGS', new: false },
+        { id: 6, img: icon12, name: 'SITES ONE PAGE', new: false },
+        { id: 7, img: icon13, name: 'SITE EMPRESA', new: false },
+        { id: 8, img: icon14, name: 'PORTFÓLIOS', new: false },
     ]
 
     const whatsappLink = `https://wa.me/${process.env.NEXT_PUBLIC_PHONE_NUMBER}`
+
+    const formattedPhoneNumber = () => {
+        let phone = process.env.NEXT_PUBLIC_PHONE_NUMBER.replace(/\D/g, '');
+
+        phone = '(' + phone.substring(0, 2) + ') ' + phone.substring(2);
+        phone = phone.substring(0, 10) + '-' + phone.substring(10);
+
+        return phone;
+    }
+
 
     const sendEmail = () => {
         axios.post(`/api/email`, form)
@@ -88,7 +105,7 @@ export default function LandingPage() {
     }
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} >
             <div
                 className={styles.alertContainer}
                 style={!alertToggle ? { display: "none" } : {}}>
@@ -137,7 +154,7 @@ export default function LandingPage() {
 
                 <span className={styles.phoneContainer}>
                     <Image src={icon1} alt='' width="auto" height="auto" />
-                    {process.env.NEXT_PUBLIC_PHONE_NUMBER}
+                    {formattedPhoneNumber()}
                 </span>
 
                 <button className={styles.menuButton} onClick={toggleMenu}>
@@ -302,12 +319,15 @@ export default function LandingPage() {
                             return (
                                 <div
                                     className={`${styles.service} ${service.new ? styles.newService : ''}`}
-                                    key={service?.name}>
+                                    key={service?.id}
+                                    onClick={e => openModal('service', service.id)}>
+
                                     <span
                                         style={service.new ? { display: 'block' } : { display: 'none' }}
                                         className={styles.newServiceTitle}>
                                         Novidade
                                     </span>
+                                    
                                     <Image src={service?.img} alt='' width="auto" height="auto" />
                                     <p>{service?.name}</p>
                                 </div>
@@ -343,7 +363,7 @@ export default function LandingPage() {
 
                         <div className={styles.caseBtnContainer}>
                             <a href="https://ludicsrous-receipt.surge.sh/" target='_blank' className={styles.buttonRippleEffect}>VISUALIZAR CASE</a>
-                            <button className={styles.buttonRippleEffect}>DESCRIÇÃO DO SITE</button>
+                            <button className={styles.buttonRippleEffect} onClick={e => openModal('case', 0)}>DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
 
@@ -357,7 +377,7 @@ export default function LandingPage() {
 
                         <div className={styles.caseBtnContainer}>
                             <a href="https://necessary-rake.surge.sh/" target='_blank' className={styles.buttonRippleEffect}>VISUALIZAR CASE</a>
-                            <button className={styles.buttonRippleEffect}>DESCRIÇÃO DO SITE</button>
+                            <button className={styles.buttonRippleEffect} onClick={e => openModal('case', 1)}>DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
 
@@ -371,7 +391,7 @@ export default function LandingPage() {
 
                         <div className={styles.caseBtnContainer}>
                             <a href="https://fumblisng-celery.surge.sh/" target='_blank' className={styles.buttonRippleEffect}>VISUALIZAR CASE</a>
-                            <button className={styles.buttonRippleEffect}>DESCRIÇÃO DO SITE</button>
+                            <button className={styles.buttonRippleEffect} onClick={e => openModal('case', 2)}>DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
 
@@ -385,7 +405,7 @@ export default function LandingPage() {
 
                         <div className={styles.caseBtnContainer}>
                             <a href="https://corporali-2b182ygyu-artkelv.vercel.app/" target='_blank' className={styles.buttonRippleEffect}>VISUALIZAR CASE</a>
-                            <button className={styles.buttonRippleEffect}>DESCRIÇÃO DO SITE</button>
+                            <button className={styles.buttonRippleEffect} onClick={e => openModal('case', 3)}>DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
                 </div>
@@ -573,6 +593,15 @@ export default function LandingPage() {
                     </div>
                 </div>
             </div>
+
+            {
+                isOpen && (
+                    type === 'case' ?
+                        <CaseModal />
+                        :
+                        <ServiceModal />
+                )
+            }
         </div >
     )
 }
