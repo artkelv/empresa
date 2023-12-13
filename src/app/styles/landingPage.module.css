@@ -245,6 +245,7 @@ a.buttonRippleEffect {
 }
 
 .secondSection {
+    position: relative;
     width: 100%;
     display: flex;
     align-items: center;
@@ -855,6 +856,15 @@ div.opinion:nth-child(4) h3 {
     width: 35%;
     padding: 1rem;
     height: 50%;
+    transition: 0.3s;
+}
+
+.eighthSection a:hover {
+    background-color: #25D366;
+}
+
+.eighthSection a::after {
+    border-radius: 0;
 }
 
 .contactUsContainer {

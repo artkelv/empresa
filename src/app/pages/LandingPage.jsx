@@ -518,7 +518,7 @@ export default function LandingPage() {
                     </p>
                 </div>
 
-                <a href={whatsappLink} target='_blank'>Falar conosco</a>
+                <a href={whatsappLink} className={styles.buttonRippleEffect} target='_blank'>Falar conosco</a>
             </div>
 
             <div className={styles.contactUsContainer} id='contatos'>
