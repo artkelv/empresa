@@ -28,13 +28,13 @@ import CaseModal from '../components/CaseModal';
 import ServiceModal from '../components/ServiceModal';
 
 import Image from 'next/image'
-import styles from '../styles/landingPage.module.css'
+import styles from '../styles/landingPage.module.css';
 import axios from 'axios';
 
 import { useContext, useState } from 'react';
 import { ModalContext } from '../contexts/ModalContext';
 
-import 'animate.css'
+import 'animate.css';
 
 export default function LandingPage() {
 

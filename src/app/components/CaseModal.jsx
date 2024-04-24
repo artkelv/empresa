@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import styles from '../styles/caseModal.module.css'
-import { ModalContext } from '../contexts/ModalContext'
+import { ModalContext } from '../contexts/ModalContext';
 
 const CaseModal = () => {
     const { id, handleSetIsOpen, closeModal } = useContext(ModalContext)
