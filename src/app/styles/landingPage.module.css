@@ -303,8 +303,8 @@ div.advantage:first-of-type {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5rem 10% 0rem 2rem;
-    margin-bottom: 9rem;
+    padding: 1rem 5% 0rem 2rem;
+    margin-bottom: 4rem;
 }
 
 .imgContainer {
@@ -1572,7 +1572,6 @@ div.opinion:nth-child(4) h3 {
         justify-content: center;
         margin-block: 3.5rem;
     }
-
     .secondSection {
         margin-top: 110px;
     }
@@ -1581,7 +1580,7 @@ div.opinion:nth-child(4) h3 {
         width: 81%;
         padding: 2.5rem 0 4.6rem;
         border: 3px solid #25D366;
-        margin: 0 auto;
+        margin: 50px auto 0;
     }
 
     .advantageText {
