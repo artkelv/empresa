@@ -9,8 +9,8 @@ const CaseModal = () => {
 
     const cases = [
         {
-            description: "Site de Empresa de Marketing",
-            message: " Bem-vindo ao universo dinâmico da Lilium, sua parceira estratégica em marketing. Explore nossos serviços abrangentes, desde design de experiência do usuário (UX/UI) até consultoria especializada. Nosso compromisso é impulsionar a visibilidade e o sucesso do seu negócio, oferecendo soluções inovadoras e personalizadas. Descubra como podemos transformar sua presença online e estratégias de marketing em resultados tangíveis."
+            description: "Site de Vagas de Emprego",
+            message: "Bem-vindo ao Site da empresa Home Office Vagas, o portal definitivo para quem busca oportunidades de emprego e desenvolvimento profissional. A maior missão deste site é trazer até os usuários vagas de emprego remotas, para todos os usuários, faça uma visita clicando no link acima."
         },
 
         {
