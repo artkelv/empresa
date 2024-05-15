@@ -357,12 +357,12 @@ export default function LandingPage() {
                         <Image src={img4} alt='Imagem 4' width="auto" height="auto" />
 
                         <div>
-                            <h1>LILIUM CASE</h1>
-                            <p className={styles.companyType}>Empresa de Marketing</p>
+                            <h1>HOME OFFICE VAGAS</h1>
+                            <p className={styles.companyType}>Empresa de vagas de Emprego</p>
                         </div>
 
                         <div className={styles.caseBtnContainer}>
-                            <a href="https://ludicsrous-receipt.surge.sh/" target='_blank' className={styles.buttonRippleEffect}>VISUALIZAR CASE</a>
+                            <a href="https://homeofficevagas.com.br/" target='_blank' className={styles.buttonRippleEffect}>VISUALIZAR CASE</a>
                             <button className={styles.buttonRippleEffect} onClick={e => openModal('case', 0)}>DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
@@ -372,11 +372,11 @@ export default function LandingPage() {
 
                         <div>
                             <h1>FRANCY SEGUROS</h1>
-                            <p className={styles.companyType}>Empresa de Marketing</p>
+                            <p className={styles.companyType}>Empresa de Planos de Saúde</p>
                         </div>
 
                         <div className={styles.caseBtnContainer}>
-                            <a href="https://necessary-rake.surge.sh/" target='_blank' className={styles.buttonRippleEffect}>VISUALIZAR CASE</a>
+                            <a href="https://francyseguros.com.br/" target='_blank' className={styles.buttonRippleEffect}>VISUALIZAR CASE</a>
                             <button className={styles.buttonRippleEffect} onClick={e => openModal('case', 1)}>DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
@@ -386,7 +386,7 @@ export default function LandingPage() {
 
                         <div>
                             <h1>IPAM</h1>
-                            <p className={styles.companyType}>Empresa de Marketing</p>
+                            <p className={styles.companyType}>Empresa de Meio Ambiente</p>
                         </div>
 
                         <div className={styles.caseBtnContainer}>
@@ -404,7 +404,7 @@ export default function LandingPage() {
                         </div>
 
                         <div className={styles.caseBtnContainer}>
-                            <a href="https://corporali-2b182ygyu-artkelv.vercel.app/" target='_blank' className={styles.buttonRippleEffect}>VISUALIZAR CASE</a>
+                            <a href="https://institutocorporali.com.br/" target='_blank' className={styles.buttonRippleEffect}>VISUALIZAR CASE</a>
                             <button className={styles.buttonRippleEffect} onClick={e => openModal('case', 3)}>DESCRIÇÃO DO SITE</button>
                         </div>
                     </div>
